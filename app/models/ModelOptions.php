@@ -19,6 +19,16 @@ class ModelOptions
     }
 
     /**
+     * Default logo white
+     *
+     * @return string
+     */
+    public static function defaultLogoWhite()
+    {
+        return LolitaFramework::baseUrl() . '/app/assets/img/logo-white.svg';
+    }
+
+    /**
      * Logo url
      *
      * @return string
@@ -26,5 +36,15 @@ class ModelOptions
     public static function logo()
     {
         return get_theme_mod('general_site_settings_upload_a_logo', self::defaultLogo());
+    }
+
+    /**
+     * Logo white url
+     *
+     * @return string
+     */
+    public static function logoWhite()
+    {
+        return get_theme_mod('general_site_settings_upload_a_white_logo', self::defaultLogoWhite());
     }
 }

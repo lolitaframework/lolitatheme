@@ -1,4 +1,9 @@
 {
     "header" : ["\\lolitatheme\\ModelShortcodes", "header"],
-    "footer" : ["\\lolitatheme\\ModelShortcodes", "footer"]
+    "footer" : ["\\lolitatheme\\ModelShortcodes", "footer"],
+    "b-small-logo" : ["\\lolitatheme\\ModelShortcodes", "bSmallLogo"],
+    "w-logo" : ["\\lolitatheme\\ModelShortcodes", "wLogo"],
+    "w-logo--white" : ["\\lolitatheme\\ModelShortcodes", "wLogoWhite"],
+    "w-menu" : ["\\lolitatheme\\ModelShortcodes", "wMenu"],
+    "w-search-block" : ["\\lolitatheme\\ModelShortcodes", "wSearchBlock"]
 }

@@ -27,6 +27,13 @@
                 }
             },
             {
+                "label" : "Upload a white logo",
+                "__CLASS__" : "WP_Customize_Image_Control",
+                "__SETTINGS__" : {
+                    "default" : ["\\lolitatheme\\ModelOptions", "defaultLogoWhite"]
+                }
+            },
+            {
                 "label" : "Apple touch icon 180x180 (png)",
                 "__CLASS__" : "WP_Customize_Image_Control"
             },

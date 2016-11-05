@@ -2,8 +2,10 @@
 
 namespace lolitatheme;
 
+use \lolitatheme\LolitaFramework\Core\Decorators\Post;
 use \lolitatheme\LolitaFramework\Core\View;
 use \lolitatheme\LolitaFramework\Core\Arr;
+use \WP_Post;
 
 class ModelPages
 {
@@ -15,12 +17,27 @@ class ModelPages
      */
     public static function home()
     {
+        return View::make('pages' . DS . 'home');
+    }
+
+    /**
+     * Page
+     *
+     * @return string
+     */
+    public static function page()
+    {
+        $qo = get_queried_object();
+        if ($qo instanceof WP_Post) {
+            $p = Post::getInstance($qo->ID);
+        } else {
+            wp_redirect(home_url());
+        }
+
         return View::make(
-            'pages' . DS . 'home',
+            'pages' . DS . 'page',
             array(
-                'logo'             => ModelOptions::logo(),
-                'JSON_menu'        => View::make('jsons' . DS . 'home_page_menu'),
-                'tmpl_search_item' => View::make('tmpls' . DS . 'search_item'),
+                'p' => $p
             )
         );
     }
