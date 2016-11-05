@@ -28,15 +28,14 @@ class ModelActions
         );
         $items  = Post::sanitize(get_posts($args));
         $return = array();
-        foreach ($items as &$el) {
+        foreach ($items as &$p) {
             $return[] = array(
                 'url'     => $p->link(),
                 'title'   => $p->title(),
-                'content' => wp_strip_all_tags($p->content(255)),
+                'content' => wp_strip_all_tags($p->content(255, '')),
                 'img'     => $p->img()->src('65x65'),
             );
         }
-
         wp_send_json_success(array('items' => $return));
     }
 }
