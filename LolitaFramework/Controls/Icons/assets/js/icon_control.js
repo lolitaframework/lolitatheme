@@ -105,3 +105,4 @@ var LolitaFramework;
     window.LolitaFramework.icon_control = new IconControl();
 })(LolitaFramework || (LolitaFramework = {}));
 //# sourceMappingURL=icon_control.js.map
+console.log('hellllllll');
