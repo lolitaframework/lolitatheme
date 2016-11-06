@@ -86,51 +86,7 @@
             <?php echo do_shortcode('[b-might-like p="' . $p->ID . '"]') ?>
         </div>
         <div class="l-content__row">
-            <!-- b-comments -->
-            <div class="b-comments">
-                <h2 class="b-comments__title"><?php echo count((array) $p->comments()) ?> <?php _e('Comments', 'lolita') ?></h2>
-                <?php if (is_array($p->comments) && count($p->comments)) : ?>
-                    <ul class="b-comments__items">
-                        <?php foreach ($p->comments as $comment) : ?>
-                            <li class="b-comments__item">
-                                <?php
-                                echo $comment->avatar(
-                                    56,
-                                    '',
-                                    esc_attr($comment->comment_author),
-                                    array('class' => 'b-comments__item__img')
-                                );
-                                ?>
-                                <div class="b-comments__item__comment">
-                                    <div class="b-comments__item__comment__author"><?php echo $comment->comment_author ?></div>
-                                    <div class="b-comments__item__comment__meta"><?php echo $comment->date() ?> at <?php echo $comment->time() ?></div>
-                                    <div class="b-comments__item__comment__text">
-                                        <?php echo $comment->comment_content ?>
-                                    </div>
-                                    <a href="<?php echo $comment->reply() ?>" class="b-comments__item__comment__reply">Reply</a>
-                                </div>
-                            </li>
-                        <?php endforeach ?>
-                    </ul>
-                <?php endif ?>
-                <form class="b-comments__post-form" action="/" method="get" accept-charset="utf-8">
-                    <span class="b-comments__post-form__caption">Leave a reply</span>
-                    <label class="b-comments__post-form__label"><span class="b-comments__post-form__label__text">Name * :</span>
-                        <input class="b-comments__post-form__input" type="text" id="name" name="name">
-                    </label>
-                    <label class="b-comments__post-form__label"><span class="b-comments__post-form__label__text">Email * :</span>
-                        <input class="b-comments__post-form__input" type="text" id="email" name="email">
-                    </label>
-                    <label class="b-comments__post-form__label"><span class="b-comments__post-form__label__text">Website:</span>
-                        <input class="b-comments__post-form__input" type="text" id="website" name="website">
-                    </label>
-                    <label class="b-comments__post-form__label"><span class="b-comments__post-form__label__text">Comment:</span>
-                        <textarea class="b-comments__post-form__textarea" id="comment" name="comment"></textarea>
-                    </label>
-                    <input class="b-comments__post-form__submit" type="submit" name="submit" value="Post comment">
-                </form>
-            </div>
-            <!-- /b-comments -->
+            <?php echo do_shortcode('[lolita-comments_sc]') ?>
         </div>
     </div>
     <!-- /l-content -->

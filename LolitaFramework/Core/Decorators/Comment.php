@@ -182,7 +182,7 @@ class Comment
      * @param int $id Comment ID.
      * @return WP_Comment|false Comment object, otherwise false.
      */
-    public static function get_instance($id)
+    public static function getInstance($id)
     {
         global $wpdb;
 
@@ -236,7 +236,7 @@ class Comment
      *
      * @return array Object as array.
      */
-    public function to_array()
+    public function toArray()
     {
         return get_object_vars($this);
     }
@@ -278,7 +278,7 @@ class Comment
      * }
      * @return array Array of `WP_Comment` objects.
      */
-    public function get_children($args = array())
+    public function getChildren($args = array())
     {
         $defaults = array(
             'format'       => 'tree',
@@ -294,7 +294,7 @@ class Comment
             if ($this->populated_children) {
                 $this->children = array();
             } else {
-                $this->children = get_comments($_args);
+                $this->children = self::sanitize(get_comments($_args));
             }
         }
 
@@ -325,7 +325,7 @@ class Comment
      *
      * @param WP_Comment $child Child comment.
      */
-    public function add_child(Comment $child)
+    public function addChild(Comment $child)
     {
         $this->children[ $child->comment_ID ] = $child;
     }
@@ -339,7 +339,7 @@ class Comment
      * @param int $child_id ID of the child.
      * @return WP_Comment|bool Returns the comment object if found, otherwise false.
      */
-    public function get_child($child_id)
+    public function getChild($child_id)
     {
         if (isset($this->children[ $child_id ])) {
             return $this->children[ $child_id ];
@@ -358,7 +358,7 @@ class Comment
      *
      * @param bool $set Whether the comment's children have already been populated.
      */
-    public function populated_children($set)
+    public function populatedChildren($set)
     {
         $this->populated_children = (bool) $set;
     }

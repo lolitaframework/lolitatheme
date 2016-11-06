@@ -1,0 +1,6 @@
+{
+    "name" : "Lolita comments",
+    "description" : "Lolita comment widget",
+    "classname" : "",
+    "view" : ["\\lolitatheme\\app\\widgets\\comments\\engine\\Engine", "widget"]
+}

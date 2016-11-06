@@ -583,6 +583,7 @@ class Post
                 'orderby' => 'comment_date_gmt',
                 'order'   => 'ASC',
                 'status'  => 'approve',
+                'parent'  => 0,
             );
 
             if (is_user_logged_in()) {
