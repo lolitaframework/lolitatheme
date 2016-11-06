@@ -400,4 +400,87 @@ class Comment
             return $post->$name;
         }
     }
+
+    /**
+     * Get the date to use in your template!
+     *
+     * @param string $date_format
+     * @return string
+     */
+    public function date($date_format = '')
+    {
+        $df = $date_format ? $date_format : get_option('date_format');
+        $the_date = (string) mysql2date($df, $this->comment_date);
+        return apply_filters('get_the_date', $the_date, $df);
+    }
+
+    /**
+     * Get the time to us in your template!
+     *
+     * @param  string $time_format
+     * @return string
+     */
+    public function time($time_format = '')
+    {
+        $tf = $time_format ? $time_format : get_option('time_format');
+        $the_time = (string) mysql2date($tf, $this->comment_date);
+        return apply_filters('get_the_time', $the_time, $tf);
+    }
+
+    /**
+     * Sanitize comment / comments
+     *
+     * @param  mixed $data
+     * @return mixed
+     */
+    public static function sanitize($data)
+    {
+        if ($data instanceof Comment) {
+            return $data;
+        }
+        if ($data instanceof WP_Comment) {
+            return new Comment($data);
+        }
+
+        if (is_array($data)) {
+            foreach ($data as &$el) {
+                $el = self::sanitize($el);
+            }
+        }
+        return $data;
+    }
+
+    /**
+     * Avatar
+     *
+     * @param int    $size       Optional. Height and width of the avatar image file in pixels. Default 96.
+     * @param string $default    Optional. URL for the default image or a default type. Accepts '404'
+     *                           (return a 404 instead of a default image), 'retro' (8bit), 'monsterid'
+     *                           (monster), 'wavatar' (cartoon face), 'indenticon' (the "quilt"),
+     *                           'mystery', 'mm', or 'mysteryman' (The Oyster Man), 'blank' (transparent GIF),
+     *                           or 'gravatar_default' (the Gravatar logo). Default is the value of the
+     *                           'avatar_default' option, with a fallback of 'mystery'.
+     * @param string $alt        Optional. Alternative text to use in &lt;img&gt; tag. Default empty.
+     * @param array  $args       {
+     *     Optional. Extra arguments to retrieve the avatar.
+     *
+     *     @type int          $height        Display height of the avatar in pixels. Defaults to $size.
+     *     @type int          $width         Display width of the avatar in pixels. Defaults to $size.
+     *     @type bool         $force_default Whether to always show the default image, never the Gravatar. Default false.
+     *     @type string       $rating        What rating to display avatars up to. Accepts 'G', 'PG', 'R', 'X', and are
+     *                                       judged in that order. Default is the value of the 'avatar_rating' option.
+     *     @type string       $scheme        URL scheme to use. See set_url_scheme() for accepted values.
+     *                                       Default null.
+     *     @type array|string $class         Array or string of additional classes to add to the &lt;img&gt; element.
+     *                                       Default null.
+     *     @type bool         $force_display Whether to always show the avatar - ignores the show_avatars option.
+     *                                       Default false.
+     *     @type string       $extra_attr    HTML attributes to insert in the IMG element. Is not sanitized. Default empty.
+     * }
+     * @return false|string `<img>` tag for the user's avatar. False on failure.
+     */
+    public function avatar($size = 96, $default = '', $alt = '', $args = null)
+    {
+        return get_avatar($this->comment_ID, $size, $default, $alt, $args);
+    }
 }

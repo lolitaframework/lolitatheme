@@ -94,26 +94,30 @@
             <!-- b-comments -->
             <div class="b-comments">
                 <h2 class="b-comments__title"><?php echo count((array) $p->comments()) ?> <?php _e('Comments', 'lolita') ?></h2>
-                <ul class="b-comments__items">
-                    <li class="b-comments__item">
-                        <img class="b-comments__item__img" src="./img/i-m-g-0055@3x.png" alt="">
-                        <div class="b-comments__item__comment">
-                            <div class="b-comments__item__comment__author">Shebela Vitaliy</div>
-                            <div class="b-comments__item__comment__meta">July 29 2016 at 09:26 am</div>
-                            <div class="b-comments__item__comment__text">Everybody sucks! I’m the best front end developer in this fucking world! Everybody sucks! I’m the best front end developer in this fucking world! Everybody sucks! I’m the best front end developer in this fucking world! Everybody sucks! I’m the best front end developer in this fucking world! Everybody sucks! I’m the best front end developer in this fucking world!</div>
-                            <a href="#" class="b-comments__item__comment__reply">Reply</a>
-                        </div>
-                    </li>
-                    <li class="b-comments__item">
-                        <img class="b-comments__item__img" src="./img/i-m-g-0055@3x.png" alt="">
-                        <div class="b-comments__item__comment">
-                            <div class="b-comments__item__comment__author">Shebela Vitaliy</div>
-                            <div class="b-comments__item__comment__meta">July 29 2016 at 09:26 am</div>
-                            <div class="b-comments__item__comment__text">Everybody sucks! I’m the best front end developer in this fucking world!</div>
-                            <a href="#" class="b-comments__item__comment__reply">Reply</a>
-                        </div>
-                    </li>
-                </ul>
+                <?php if (is_array($p->comments) && count($p->comments)) : ?>
+                    <ul class="b-comments__items">
+                        <?php foreach ($p->comments as $comment) : ?>
+                            <li class="b-comments__item">
+                                <?php
+                                echo $comment->avatar(
+                                    96,
+                                    '',
+                                    esc_attr($comment->comment_author),
+                                    array('class' => 'b-comments__item__img')
+                                );
+                                ?>
+                                <div class="b-comments__item__comment">
+                                    <div class="b-comments__item__comment__author"><?php echo $comment->comment_author ?></div>
+                                    <div class="b-comments__item__comment__meta"><?php echo $comment->date() ?> at <?php echo $comment->time() ?></div>
+                                    <div class="b-comments__item__comment__text">
+                                        <?php echo $comment->comment_content ?>
+                                    </div>
+                                    <a href="#" class="b-comments__item__comment__reply">Reply</a>
+                                </div>
+                            </li>
+                        <?php endforeach ?>
+                    </ul>
+                <?php endif ?>
                 <form class="b-comments__post-form" action="/" method="get" accept-charset="utf-8">
                     <span class="b-comments__post-form__caption">Leave a reply</span>
                     <label class="b-comments__post-form__label"><span class="b-comments__post-form__label__text">Name * :</span>

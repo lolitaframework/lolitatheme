@@ -9,4 +9,4 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class() ?> >
-<?php echo do_shortcode('[lf_css_loader_8]')
+<?php echo do_shortcode('[lf_css_loader_8]');

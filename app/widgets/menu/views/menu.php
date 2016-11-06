@@ -1,3 +1,3 @@
 <?php if ($menu !== false) : ?>
     <?php echo $menu->render() ?>
-<?php endif
+<?php endif;

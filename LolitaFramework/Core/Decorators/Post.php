@@ -593,7 +593,7 @@ class Post
                     $comment_args['include_unapproved'] = $commenter['comment_author_email'];
                 }
             }
-            $this->comments = get_comments($comment_args);
+            $this->comments = Comment::sanitize(get_comments($comment_args));
         }
         return $this->comments;
     }
