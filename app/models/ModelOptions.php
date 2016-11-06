@@ -47,4 +47,14 @@ class ModelOptions
     {
         return get_theme_mod('general_site_settings_upload_a_white_logo', self::defaultLogoWhite());
     }
+
+    /**
+     * Social icons
+     *
+     * @return array
+     */
+    public static function socialIcons()
+    {
+        return (array) get_theme_mod('general_site_settings_social_icons', array());
+    }
 }

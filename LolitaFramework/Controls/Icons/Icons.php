@@ -33,7 +33,10 @@ class Icons extends Control implements iHaveAdminEnqueue
             $pack = new Pack($file);
             $this->packs[ $pack->getName() ] = $pack;
         }
+
         add_action('admin_footer', array(&$this, 'renderStylesForIcons'));
+        add_action('customize_controls_print_footer_scripts', array(&$this, 'renderStylesForIcons'));
+        add_action('customize_controls_print_footer_scripts', array(__CLASS__, 'adminEnqueue'));
         $this->renderStylesForIcons();
     }
     
@@ -116,7 +119,7 @@ class Icons extends Control implements iHaveAdminEnqueue
         wp_enqueue_script(
             'lf-icons-control',
             Url::toUrl(__DIR__) . '/assets/js/icon_control.js',
-            array('jquery'),
+            array(),
             false,
             true
         );

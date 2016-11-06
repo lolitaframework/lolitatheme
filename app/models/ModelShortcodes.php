@@ -136,4 +136,14 @@ class ModelShortcodes
         }
         return '';
     }
+
+    /**
+     * w-social-buttons
+     *
+     * @return string
+     */
+    public static function wSocialButtons()
+    {
+        return print_r(ModelOptions::socialIcons(), true);
+    }
 }
