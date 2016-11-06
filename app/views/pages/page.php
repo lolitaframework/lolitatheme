@@ -18,13 +18,15 @@
                 </div>
             </div>
         </div>
-        <div class="l-header__botton">
-            <!-- w-banner -->
-            <div class="w-banner w-banner--header">
-                <div class="w-banner__image" style="background-image: url('./img/banner-1.jpg');"></div>
+        <?php if ($p->img()->isInitialized()) : ?>
+            <div class="l-header__botton">
+                <!-- w-banner -->
+                <div class="w-banner w-banner--header">
+                    <div class="w-banner__image" style="background-image: url('<?php echo $p->img()->src('large') ?>');"></div>
+                </div>
+                <!-- /w-banner -->
             </div>
-            <!-- /w-banner -->
-        </div>
+        <?php endif ?>
     </header>
     <!-- /l-header -->
     <!-- l-content -->
@@ -34,75 +36,48 @@
             <div class="b-article">
                 <header class="b-article__header">
                     <div class="b-article__header__categories">
-                        <!-- b-categories -->
-                        <div class="b-categories">
-                            <nav>
-                                <ul class="b-categories__list">
-                                    <li class="b-categories__list__item"><a class="b-categories__list__item__link" href="#">Core</a></li>
-                                    <li class="b-categories__list__item"><a class="b-categories__list__item__link" href="#">Widgets</a></li>
-                                    <li class="b-categories__list__item"><a class="b-categories__list__item__link" href="#">Category</a></li>
-                                 </ul>
-                            </nav>
-                        </div>
-                        <!-- /b-categories -->
+                        <?php if (is_array($p->categories) && count($p->categories)) : ?>
+                            <!-- b-categories -->
+                            <div class="b-categories">
+                                <nav>
+                                    <ul class="b-categories__list">
+                                        <?php foreach ($p->categories as $cat): ?>
+                                            <li class="b-categories__list__item">
+                                                <a class="b-categories__list__item__link" href="<?php echo $cat->link() ?>"><?php echo $cat->name ?></a>
+                                            </li>
+                                        <?php endforeach ?>
+                                     </ul>
+                                </nav>
+                            </div>
+                            <!-- /b-categories -->
+                        <?php endif ?>
                     </div>
-                    <h1 class="b-article__header__title">Lolita Framework</h1>
+                    <h1 class="b-article__header__title"><?php echo $p->title() ?></h1>
                     <div class="b-article__header__meta">
-                        Posted on July 28 2016
+                        Posted on <?php echo $p->date() ?>
                     </div>
                 </header>
                 <div class="b-article__content">
                     <div class="b-text">
-                        <img src="./img/page-picture-1.jpg" class="alignleft" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae labore nesciunt exercitationem consequuntur asperiores laboriosam consequatur iusto. Nam earum, beatae veritatis ullam amet ipsam, dolore, quod fugit dolorum corporis libero accusantium quasi? Officiis optio ex deserunt iste voluptate delectus harum, error nisi. Ipsum quia repellat molestias, magnam voluptates nemo, repudiandae vitae quibusdam dolorum totam quaerat, dignissimos vel, deserunt!</p>
-                        <p>Animi adipisci, explicabo, tempore quod nobis ipsam delectus reiciendis consequatur fuga facilis architecto quisquam quibusdam dolores tenetur reprehenderit blanditiis eum. Eos accusantium autem, odio ipsam placeat est consectetur, ut reprehenderit optio voluptate veniam at architecto, quam perferendis suscipit, fugit praesentium sapiente!</p>
-                        <p>Dolor commodi, sequi id ullam fugiat, alias neque error quibusdam debitis. Cum numquam possimus quia, facere at, nobis consequatur. Corporis nostrum dicta quas aliquam reprehenderit quibusdam blanditiis hic. Aut culpa amet, voluptas nemo repellendus nihil possimus. Voluptate at ex, ratione ipsa quisquam modi consectetur officiis adipisci itaque blanditiis debitis nam soluta facere similique autem neque asperiores quam dolorem aliquid recusandae quaerat iure. Commodi sint dolore tempora.</p>
-                        <img src="./img/page-picture-2.jpg" class="alignright" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae labore nesciunt exercitationem consequuntur asperiores laboriosam consequatur iusto. Nam earum, beatae veritatis ullam amet ipsam, dolore, quod fugit dolorum corporis libero accusantium quasi? Officiis optio ex deserunt iste voluptate delectus harum, error nisi. Ipsum quia repellat molestias, magnam voluptates nemo, repudiandae vitae quibusdam dolorum totam quaerat, dignissimos vel, deserunt!</p>
-                        <p>Animi adipisci, explicabo, tempore quod nobis ipsam delectus reiciendis consequatur fuga facilis architecto quisquam quibusdam dolores tenetur reprehenderit blanditiis eum. Eos accusantium autem, odio ipsam placeat est consectetur, ut reprehenderit optio voluptate veniam at architecto, quam perferendis suscipit, fugit praesentium sapiente!</p>
-                        <p>Dolor commodi, sequi id ullam fugiat, alias neque error quibusdam debitis. Cum numquam possimus quia, facere at, nobis consequatur. Corporis nostrum dicta quas aliquam reprehenderit quibusdam blanditiis hic. Aut culpa amet, voluptas nemo repellendus nihil possimus. Voluptate at ex, ratione ipsa quisquam modi consectetur officiis adipisci itaque blanditiis debitis nam soluta facere similique autem neque asperiores quam dolorem aliquid recusandae quaerat iure. Commodi sint dolore tempora.</p>
-                        <p>Dolor commodi, sequi id ullam fugiat, alias neque error quibusdam debitis. Cum numquam possimus quia, facere at, nobis consequatur. Corporis nostrum dicta quas aliquam reprehenderit quibusdam blanditiis hic. Aut culpa amet, voluptas nemo repellendus nihil possimus. Voluptate at ex, ratione ipsa quisquam modi consectetur officiis adipisci itaque blanditiis debitis nam soluta facere similique autem neque asperiores quam dolorem aliquid recusandae quaerat iure. Commodi sint dolore tempora.</p>
-                        <h1>H1 - lolita is awesome framework</h1>
-                        <h2>H2 - lolita is awesome framework</h2>
-                        <h3>H3 - lolita is awesome framework</h3>
-                        <h4>H4 - lolita is awesome framework</h4>
-                        <h1>Blockquote</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae labore nesciunt exercitationem consequuntur asperiores laboriosam consequatur iusto.</p>
-                        <blockquote>
-                            <p>
-                                Lolita Framework just fucking awesome!
-                                <br> - Shebela Vitaliy
-                            </p>
-                        </blockquote>
-                        <h1>Unordered list</h1>
-                        <ul>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                            <li>Item 4</li>
-                        </ul>
-                        <h1>Ordered list</h1>
-                        <ol>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                            <li>Item 4</li>
-                        </ol>
+                        <?php echo $p->content() ?>
                     </div>
                 </div>
                 <footer class="b-article__footer">
-                    <!-- b-tags -->
-                    <div class="b-tags">
-                        <nav>
-                            <ul class="b-tags__list">
-                                <li class="b-tags__list__item"><a class="b-tags__list__item__link" href="#">CONFIGURATION</a></li>
-                                <li class="b-tags__list__item"><a class="b-tags__list__item__link" href="#">Tag</a></li>
-                                <li class="b-tags__list__item"><a class="b-tags__list__item__link" href="#">CSS Loader</a></li>
-                                <li class="b-tags__list__item"><a class="b-tags__list__item__link" href="#">Widgets</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- /b-tags -->
+                    <?php if (is_array($p->tags) && count($p->tags)) : ?>
+                        <!-- b-tags -->
+                        <div class="b-tags">
+                            <nav>
+                                <ul class="b-tags__list">
+                                <?php foreach ($p->tags as $tag): ?>
+                                    <li class="b-tags__list__item">
+                                        <a class="b-tags__list__item__link" href="<?php echo $tag->link() ?>"><?php echo $tag->name ?></a>
+                                    </li>
+                                <?php endforeach ?>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- /b-tags -->
+                    <?php endif ?>
                 </footer>
             </div>
             <!-- /b-article -->
