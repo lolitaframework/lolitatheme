@@ -86,11 +86,6 @@
             <?php echo do_shortcode('[b-might-like p="' . $p->ID . '"]') ?>
         </div>
         <div class="l-content__row">
-            <?php
-            echo '<pre>';
-            var_dump($p->comments());
-            echo '</pre>';
-            ?>
             <!-- b-comments -->
             <div class="b-comments">
                 <h2 class="b-comments__title"><?php echo count((array) $p->comments()) ?> <?php _e('Comments', 'lolita') ?></h2>
@@ -100,7 +95,7 @@
                             <li class="b-comments__item">
                                 <?php
                                 echo $comment->avatar(
-                                    96,
+                                    56,
                                     '',
                                     esc_attr($comment->comment_author),
                                     array('class' => 'b-comments__item__img')
@@ -112,7 +107,7 @@
                                     <div class="b-comments__item__comment__text">
                                         <?php echo $comment->comment_content ?>
                                     </div>
-                                    <a href="#" class="b-comments__item__comment__reply">Reply</a>
+                                    <a href="<?php echo $comment->reply() ?>" class="b-comments__item__comment__reply">Reply</a>
                                 </div>
                             </li>
                         <?php endforeach ?>

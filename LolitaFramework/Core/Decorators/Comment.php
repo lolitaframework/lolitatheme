@@ -481,6 +481,25 @@ class Comment
      */
     public function avatar($size = 96, $default = '', $alt = '', $args = null)
     {
-        return get_avatar($this->comment_ID, $size, $default, $alt, $args);
+        return get_avatar($this, $size, $default, $alt, $args);
+    }
+
+    /**
+     * Reply link
+     *
+     * @return string
+     */
+    public function reply()
+    {
+        if (get_option('comment_registration') && !is_user_logged_in()) {
+            return esc_url(wp_login_url(get_permalink()));
+        }
+        return esc_url(
+            add_query_arg(
+                'replytocom',
+                $this->comment_ID,
+                get_permalink($this->comment_post_ID)
+            )
+        );
     }
 }
