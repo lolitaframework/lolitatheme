@@ -41,4 +41,14 @@ class ModelPages
             )
         );
     }
+
+    /**
+     * 404 error page
+     *
+     * @return string
+     */
+    public static function page404()
+    {
+        return View::make('pages' . DS . '404');
+    }
 }

@@ -2,5 +2,6 @@
     "front" : "{{ \\lolitatheme\\ModelPages::home }}",
     "home" : "{{ \\lolitatheme\\ModelPages::home }}",
     "page" : "{{ \\lolitatheme\\ModelPages::page }}",
-    "single" : "{{ \\lolitatheme\\ModelPages::page }}"
+    "single" : "{{ \\lolitatheme\\ModelPages::page }}",
+    "404" : "{{ \\lolitatheme\\ModelPages::page404 }}"
 }
