@@ -4,6 +4,7 @@ namespace lolitatheme;
 
 use \lolitatheme\LolitaFramework\Core\View;
 use \lolitatheme\LolitaFramework\Core\Arr;
+use \lolitatheme\LolitaFramework\Core\Decorators\Post;
 
 class ModelShortcodes
 {
@@ -101,5 +102,38 @@ class ModelShortcodes
                 'b_class' => Arr::get($atts, 'b_class'),
             )
         );
+    }
+
+    /**
+     * b-might-like
+     *
+     * @param  array  $atts
+     * @return string
+     */
+    public static function bMightLike($atts = array())
+    {
+        if (array_key_exists('p', $atts)) {
+            $p = Post::getInstance($atts['p']);
+            if (is_array($p->categories) && count($p->categories)) {
+                $items = get_posts(
+                    array(
+                        'posts_per_page'   => 3,
+                        'exclude'          => $p->ID,
+                        'category'         => implode(',', Arr::pluck($p->categories, 'term_id')),
+                        'orderby'          => 'date',
+                        'order'            => 'DESC',
+                        'post_type'        => 'post',
+                        'post_status'      => 'publish',
+                    )
+                );
+                return View::make(
+                    'blocks' . DS . 'b-might-like',
+                    array(
+                        'items' => Post::sanitize($items),
+                    )
+                );
+            }
+        }
+        return '';
     }
 }

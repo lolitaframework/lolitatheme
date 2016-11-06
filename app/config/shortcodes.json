@@ -5,5 +5,6 @@
     "w-logo" : ["\\lolitatheme\\ModelShortcodes", "wLogo"],
     "w-logo--white" : ["\\lolitatheme\\ModelShortcodes", "wLogoWhite"],
     "w-menu" : ["\\lolitatheme\\ModelShortcodes", "wMenu"],
-    "w-search-block" : ["\\lolitatheme\\ModelShortcodes", "wSearchBlock"]
+    "w-search-block" : ["\\lolitatheme\\ModelShortcodes", "wSearchBlock"],
+    "b-might-like" : ["\\lolitatheme\\ModelShortcodes", "bMightLike"]
 }
