@@ -85,6 +85,11 @@
         <div class="l-content__row">
             <?php echo do_shortcode('[b-might-like p="' . $p->ID . '"]') ?>
         </div>
+        <?php
+        echo '<pre>';
+        var_dump($p->comments());
+        echo '</pre>';
+        ?>
         <div class="l-content__row">
             <!-- b-comments -->
             <div class="b-comments">
