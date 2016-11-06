@@ -41,7 +41,7 @@
                             <div class="b-categories">
                                 <nav>
                                     <ul class="b-categories__list">
-                                        <?php foreach ($p->categories as $cat): ?>
+                                        <?php foreach ($p->categories as $cat) : ?>
                                             <li class="b-categories__list__item">
                                                 <a class="b-categories__list__item__link" href="<?php echo $cat->link() ?>"><?php echo $cat->name ?></a>
                                             </li>
@@ -68,7 +68,7 @@
                         <div class="b-tags">
                             <nav>
                                 <ul class="b-tags__list">
-                                <?php foreach ($p->tags as $tag): ?>
+                                <?php foreach ($p->tags as $tag) : ?>
                                     <li class="b-tags__list__item">
                                         <a class="b-tags__list__item__link" href="<?php echo $tag->link() ?>"><?php echo $tag->name ?></a>
                                     </li>
@@ -85,15 +85,15 @@
         <div class="l-content__row">
             <?php echo do_shortcode('[b-might-like p="' . $p->ID . '"]') ?>
         </div>
-        <?php
-        echo '<pre>';
-        var_dump($p->comments());
-        echo '</pre>';
-        ?>
         <div class="l-content__row">
+            <?php
+            echo '<pre>';
+            var_dump($p->comments());
+            echo '</pre>';
+            ?>
             <!-- b-comments -->
             <div class="b-comments">
-                <h2 class="b-comments__title">2 Comments</h2>
+                <h2 class="b-comments__title"><?php echo count((array) $p->comments()) ?> <?php _e('Comments', 'lolita') ?></h2>
                 <ul class="b-comments__items">
                     <li class="b-comments__item">
                         <img class="b-comments__item__img" src="./img/i-m-g-0055@3x.png" alt="">

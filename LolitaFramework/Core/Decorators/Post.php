@@ -183,7 +183,11 @@ class Post
      */
     public $filter;
 
-    public $data;
+    /**
+     * Saved comments array
+     * @var null
+     */
+    public $comments = null;
 
     /**
      * Cached Img object
@@ -573,22 +577,25 @@ class Post
      */
     public function comments()
     {
-        $comment_args = array(
-            'post_id' => $this->ID,
-            'orderby' => 'comment_date_gmt',
-            'order'   => 'ASC',
-            'status'  => 'approve',
-        );
+        if (null === $this->comments) {
+            $comment_args = array(
+                'post_id' => $this->ID,
+                'orderby' => 'comment_date_gmt',
+                'order'   => 'ASC',
+                'status'  => 'approve',
+            );
 
-        if ( is_user_logged_in() ) {
-            $comment_args['include_unapproved'] = get_current_user_id();
-        } else {
-            $commenter = wp_get_current_commenter();
-            if ( $commenter['comment_author_email'] ) {
-                $comment_args['include_unapproved'] = $commenter['comment_author_email'];
+            if (is_user_logged_in()) {
+                $comment_args['include_unapproved'] = get_current_user_id();
+            } else {
+                $commenter = wp_get_current_commenter();
+                if ($commenter['comment_author_email']) {
+                    $comment_args['include_unapproved'] = $commenter['comment_author_email'];
+                }
             }
+            $this->comments = get_comments($comment_args);
         }
-        return get_comments($comment_args);
+        return $this->comments;
     }
 
     /**

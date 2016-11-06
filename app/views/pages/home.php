@@ -1,5 +1,5 @@
 <?php echo do_shortcode('[header]') ?>
-	<!-- l-main-block -->
+    <!-- l-main-block -->
     <section class="l-full-screen">
         <!-- l-front-block -->
         <div class="l-full-screen__l-front-block">
