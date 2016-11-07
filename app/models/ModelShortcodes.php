@@ -4,6 +4,7 @@ namespace lolitatheme;
 
 use \lolitatheme\LolitaFramework\Core\View;
 use \lolitatheme\LolitaFramework\Core\Arr;
+use \lolitatheme\LolitaFramework\Core\Data;
 use \lolitatheme\LolitaFramework\Core\Decorators\Post;
 
 class ModelShortcodes
@@ -148,6 +149,31 @@ class ModelShortcodes
             'blocks' . DS . 'w-social-buttons',
             array(
                 'icons' => ModelOptions::socialIcons()
+            )
+        );
+    }
+
+    /**
+     * w-follow
+     *
+     * @return mixed
+     */
+    public static function wFollow()
+    {
+        $transient_key = 'cache-w-follow';
+        $items         = get_transient($transient_key);
+        $items = false;
+
+        if (false === $items) {
+            $url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=3494283511.3a81a9f.ca5fb9bd44df4ad69768c44a8947c3e5&COUNT=10';
+            $items = wp_remote_retrieve_body(wp_remote_get($url));
+            $items = Data::maybeJSONDecode($items);
+            set_transient($transient_key, $items, HOUR_IN_SECONDS);
+        }
+        return View::make(
+            'blocks' . DS . 'w-follow',
+            array(
+                'items' => $items
             )
         );
     }

@@ -7,5 +7,6 @@
     "w-menu" : ["\\lolitatheme\\ModelShortcodes", "wMenu"],
     "w-search-block" : ["\\lolitatheme\\ModelShortcodes", "wSearchBlock"],
     "b-might-like" : ["\\lolitatheme\\ModelShortcodes", "bMightLike"],
-    "w-social-buttons" : ["\\lolitatheme\\ModelShortcodes", "wSocialButtons"]
+    "w-social-buttons" : ["\\lolitatheme\\ModelShortcodes", "wSocialButtons"],
+    "w-follow" : ["\\lolitatheme\\ModelShortcodes", "wFollow"]
 }
