@@ -144,6 +144,11 @@ class ModelShortcodes
      */
     public static function wSocialButtons()
     {
-        return print_r(ModelOptions::socialIcons(), true);
+        return View::make(
+            'blocks' . DS . 'w-social-buttons',
+            array(
+                'icons' => ModelOptions::socialIcons()
+            )
+        );
     }
 }
