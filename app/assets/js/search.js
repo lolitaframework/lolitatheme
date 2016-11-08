@@ -25,7 +25,9 @@ var LolitaFramework;
             this.ajax = window.wp.ajax;
             this.tmpl = window.wp.template('search-item');
             jQuery(document).on('keyup', '.b-search-form__input', function (e) { return _this.searchInputKeyup(e); });
-            this.search(jQuery('.b-search-form__input').val());
+            if (jQuery('.b-search-form__input').length) {
+                this.search(jQuery('.b-search-form__input').val());
+            }
         }
         /**
          * Search input keyup event

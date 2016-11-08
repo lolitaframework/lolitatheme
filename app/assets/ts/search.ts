@@ -32,8 +32,9 @@ namespace LolitaFramework {
                 '.b-search-form__input',
                 (e:any) => this.searchInputKeyup(e)
             );
-
-            this.search(jQuery('.b-search-form__input').val());
+            if(jQuery('.b-search-form__input').length) {
+                this.search(jQuery('.b-search-form__input').val());
+            }
         }
 
         /**

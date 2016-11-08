@@ -455,6 +455,9 @@ class Post
             $tid = get_post_thumbnail_id($this->ID);
             $this->img = new Img((int) $tid);
         }
+        if (wp_attachment_is_image($this->ID)) {
+            $this->img = new Img((int) $this->ID);
+        }
         return $this->img;
     }
 

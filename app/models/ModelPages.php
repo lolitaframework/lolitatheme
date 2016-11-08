@@ -13,6 +13,29 @@ use \WP_Term;
 class ModelPages
 {
 
+    public static function attachment()
+    {
+        $qo = get_queried_object();
+        if (!($qo instanceof WP_Post)) {
+            wp_redirect(home_url());
+        }
+        $p      = Post::sanitize($qo);
+        $file   = get_attached_file($p->ID);
+        $info   = getimagesize($file);
+        $width  = Arr::get($info, 0, 0);
+        $height = Arr::get($info, 1, 0);
+        return View::make(
+            'pages' . DS . 'attachment',
+            array(
+                'p'         => $p,
+                'file_size' => size_format(filesize($file)),
+                'info'      => $info,
+                'width'     => $width,
+                'height'    => $height,
+            )
+        );
+    }
+
     /**
      * Archive page
      *
