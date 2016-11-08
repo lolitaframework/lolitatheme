@@ -8,7 +8,7 @@
                     <?php if (array_key_exists('is_prev', $el)) : ?>
                         <?php if (array_key_exists('link', $el)) : ?>
                             <a class="b-pagination__item__prev" href="<?php echo $el['link'] ?>"><?php echo $el['text'] ?></a>
-                        <?php else: ?>
+                        <?php else : ?>
                             <a class="b-pagination__item__prev b-pagination__item__prev--disabled" href="#"><?php echo $el['text'] ?></a>
                         <?php endif ?>
                     <?php elseif (array_key_exists('is_next', $el)) : ?>
