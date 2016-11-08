@@ -1,0 +1,94 @@
+<?php echo do_shortcode('[header]') ?>
+    <!-- l-header -->
+    <header class="l-header">
+        <div class="l-header__top">
+            <div class="l-header__wide-container">
+                <div class="l-header__w-logo">
+                    <?php echo do_shortcode('[w-logo--white]') ?>
+                </div>
+                <div class="l-header__w-menu">
+                    <!-- w-menu -->
+                    <div class="w-menu w-menu--header">
+                        <?php echo do_shortcode('[w-menu]') ?>
+                    </div>
+                    <!-- /w-menu -->
+                </div>
+                <div class="l-header__w-search-block l-header__w-search-block--hidden">
+                    <?php echo do_shortcode('[w-search-block w_class="w-search-block w-search-block--header w-search-block--hidden" b_class="b-search-form b-search-form--header"]') ?>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /l-header -->
+    <!-- l-archive -->
+    <div class="l-archive">
+        <div class="l-archive__title">
+            <h1 class="l-archive__title__h1"><?php echo $qo->name ?></h1>
+        </div>
+        <div class="l-archive__breadcrumbs">
+            <?php //echo do_shortcode('[lolita-breadcrumbs_sc]'); ?>
+            <!-- b-breadcrumbs -->
+            <div class="b-breadcrumbs">
+                <nav>
+                    <ul class="b-breadcrumbs__crumbs">
+                        <li class="b-breadcrumbs__crumb">
+                            <a href="#" class="b-breadcrumbs__crumb__link">Lolita Framework</a>
+                        </li>
+                        <li class="b-breadcrumbs__crumb">
+                            <a href="#" class="b-breadcrumbs__crumb__link">Configuration</a>
+                        </li>
+                        <li class="b-breadcrumbs__crumb">
+                            <a href="#" class="b-breadcrumbs__crumb__link b-breadcrumbs__crumb__link--disabled">Routes</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- /b-breadcrumbs -->
+        </div>
+        <div class="l-archive__meta">
+            <?php echo count($items) ?> <?php _e('results found', 'lolita') ?>
+        </div>
+        <div class="l-archive__results">
+            <?php foreach ($items as $p) : ?>
+                <div class="l-archive__archive__results__item">
+                    <!-- b-post-preview -->
+                    <article class="b-post-preview">
+                            <a href="#" class="b-post-preview__thumbnail">
+                                <?php if ($p->img()->isInitialized()) : ?>
+                                    <img class="b-post-preview__thumbnail__image" src="<?php echo $p->img()->src('200x200') ?>" alt="<?php echo $p->img()->alt() ?>">
+                                <?php endif ?>
+                                <span class="b-post-preview__thumbnail__meta">Posted on <?php echo $p->date() ?></span>
+                            </a>
+                            <div class="b-post-preview__content">
+                                <h3 class="b-post-preview__content__title"><a href="<?php echo $p->link() ?>" class="b-post-preview__content__title__link"><?php echo $p->title() ?></a></h3>
+                                <div class="b-post-preview__content__excerpt">
+                                    <?php echo $p->content(500, '...') ?>
+                                </div>
+                                <a href="<?php echo $p->link() ?>" class="b-post-preview__content__read-more"><?php _e('Read more', 'lolita') ?></a>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- /b-post-preview -->
+                </div>
+            <?php endforeach ?>
+            </div>
+        </div>
+        <div class="l-archive__pagination">
+            <?php echo do_shortcode('[b-pagination max_num_pages="' . $max_num_pages . '" current="' . $current_page .'"]') ?>
+        </div>
+    </div>
+    <!-- /l-archive -->
+    <!-- l-footer -->
+    <div class="l-footer">
+        <div class="l-footer__row">
+            <?php echo do_shortcode('[w-follow]') ?>
+        </div>
+        <div class="l-footer__row">
+            <?php echo do_shortcode('[w-social-buttons]') ?>
+        </div>
+        <div class="l-footer__row l-footer__row--centered">
+            <?php echo do_shortcode('[b-small-logo]') ?>
+        </div>
+    </div>
+    <!-- /l-footer -->
+<?php echo do_shortcode('[footer]') ?>

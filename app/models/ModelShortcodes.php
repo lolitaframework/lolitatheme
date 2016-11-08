@@ -177,4 +177,32 @@ class ModelShortcodes
             )
         );
     }
+
+    /**
+     * b-pagination
+     *
+     * @param  array $attrs
+     * @return string
+     */
+    public static function bPagination($attrs)
+    {
+        $max_num_pages = Arr::get($attrs, 'max_num_pages', 1);
+        $big           = 999999999;
+        $current       = max(1, Arr::get($attrs, 'current', 1));
+        $args          = array(
+            'base'    => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+            'format'  => '?paged=%#%',
+            'current' => $current,
+            'total'   => $max_num_pages,
+            'type'    => 'array',
+        );
+        return View::make(
+            'blocks' . DS . 'b-pagination',
+            array(
+                'items'         => ModelMain::paginateLinks($args),
+                'current'       => $current,
+                'max_num_pages' => $max_num_pages,
+            )
+        );
+    }
 }

@@ -1,4 +1,5 @@
 {
+	"archive" : "{{ \\lolitatheme\\ModelPages::archive }}",
     "front" : "{{ \\lolitatheme\\ModelPages::home }}",
     "home" : "{{ \\lolitatheme\\ModelPages::home }}",
     "page" : "{{ \\lolitatheme\\ModelPages::page }}",
