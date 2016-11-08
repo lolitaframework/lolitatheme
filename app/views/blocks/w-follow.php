@@ -1,4 +1,4 @@
-<?php if (array_key_exists('data', $items)) : ?>
+<?php if (array_key_exists('data', (array) $items)) : ?>
     <!-- w-folow -->
     <div class="w-folow">
         <h5 class="w-folow__title"><?php _e('Folow', 'lolita') ?></h5>

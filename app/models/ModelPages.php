@@ -27,7 +27,7 @@ class ModelPages
 
         $args = array(
             'numberposts' => $ppp,
-            'offset'      => $ppp * $paged,
+            'offset'      => $ppp * ($paged-1),
             'orderby'     => 'date',
             'order'       => 'DESC',
             'post_tpye'   => 'post',
@@ -45,8 +45,9 @@ class ModelPages
             'pages' . DS . 'archive',
             array(
                 'qo'            => $qo,
+                'query'         => $query,
                 'items'         => $items,
-                'max_num_pages' => $query->max_num_pages - 1,
+                'max_num_pages' => $query->max_num_pages,
                 'current_page'  => $paged,
             )
         );

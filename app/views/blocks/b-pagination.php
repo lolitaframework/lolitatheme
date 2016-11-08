@@ -10,7 +10,7 @@
                     <?php elseif (array_key_exists('is_next', $el)) : ?>
                         <a class="b-pagination__item__next" href="<?php echo $el['link'] ?>"><?php echo $el['text'] ?></a>
                     <?php elseif (array_key_exists('link', $el)) : ?>
-                        <a class="b-pagination__link" href="<?php echo $el['link'] ?>"><?php echo $el['text'] ?></a>
+                        <a class="b-pagination__item__link" href="<?php echo $el['link'] ?>"><?php echo $el['text'] ?></a>
                     <?php else : ?>
                         <a class="b-pagination__item__link b-pagination__item__link--active" href="#"><?php echo $el['text'] ?></a>
                     <?php endif ?>

@@ -46,32 +46,30 @@
             <!-- /b-breadcrumbs -->
         </div>
         <div class="l-archive__meta">
-            <?php echo count($items) ?> <?php _e('results found', 'lolita') ?>
+            <?php echo (int) $query->found_posts ?> <?php _e('results found', 'lolita') ?>
         </div>
         <div class="l-archive__results">
             <?php foreach ($items as $p) : ?>
                 <div class="l-archive__archive__results__item">
                     <!-- b-post-preview -->
                     <article class="b-post-preview">
-                            <a href="#" class="b-post-preview__thumbnail">
-                                <?php if ($p->img()->isInitialized()) : ?>
-                                    <img class="b-post-preview__thumbnail__image" src="<?php echo $p->img()->src('200x200') ?>" alt="<?php echo $p->img()->alt() ?>">
-                                <?php endif ?>
-                                <span class="b-post-preview__thumbnail__meta">Posted on <?php echo $p->date() ?></span>
-                            </a>
-                            <div class="b-post-preview__content">
-                                <h3 class="b-post-preview__content__title"><a href="<?php echo $p->link() ?>" class="b-post-preview__content__title__link"><?php echo $p->title() ?></a></h3>
-                                <div class="b-post-preview__content__excerpt">
-                                    <?php echo $p->content(500, '...') ?>
-                                </div>
-                                <a href="<?php echo $p->link() ?>" class="b-post-preview__content__read-more"><?php _e('Read more', 'lolita') ?></a>
-                            </div>
+                        <a href="#" class="b-post-preview__thumbnail">
+                            <?php if ($p->img()->isInitialized()) : ?>
+                                <img class="b-post-preview__thumbnail__image" src="<?php echo $p->img()->src('200x200') ?>" alt="<?php echo $p->img()->alt() ?>">
+                            <?php endif ?>
+                            <span class="b-post-preview__thumbnail__meta">Posted on <?php echo $p->date() ?></span>
                         </a>
+                        <div class="b-post-preview__content">
+                            <h3 class="b-post-preview__content__title"><a href="<?php echo $p->link() ?>" class="b-post-preview__content__title__link"><?php echo $p->title() ?></a></h3>
+                            <div class="b-post-preview__content__excerpt">
+                                <?php echo $p->content(500, '...') ?>
+                            </div>
+                            <a href="<?php echo $p->link() ?>" class="b-post-preview__content__read-more"><?php _e('Read more', 'lolita') ?></a>
+                        </div>
                     </article>
                     <!-- /b-post-preview -->
                 </div>
             <?php endforeach ?>
-            </div>
         </div>
         <div class="l-archive__pagination">
             <?php echo do_shortcode('[b-pagination max_num_pages="' . $max_num_pages . '" current="' . $current_page .'"]') ?>
