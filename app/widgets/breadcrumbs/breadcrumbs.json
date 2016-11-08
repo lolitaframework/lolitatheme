@@ -2,5 +2,5 @@
     "name" : "Lolita breadcrumbs",
     "description" : "Lolita breadcrumbs widget",
     "classname" : "lf_breadcrumbs",
-    "view" : ["\\daxx\\app\\widgets\\breadcrumbs\\engine\\Engine", "widget"]
+    "view" : ["\\lolitatheme\\app\\widgets\\breadcrumbs\\engine\\Engine", "widget"]
 }

@@ -1,8 +1,8 @@
 <?php
-namespace daxx\app\widgets\breadcrumbs\engine\Trails;
+namespace lolitatheme\app\widgets\breadcrumbs\engine\Trails;
 
-use \daxx\app\widgets\breadcrumbs\engine\Crumb;
-use \daxx\LolitaFramework\Core\Loc;
+use \lolitatheme\app\widgets\breadcrumbs\engine\Crumb;
+use \lolitatheme\LolitaFramework\Core\Loc;
 use \WP_Term;
 
 class Archive extends Trail

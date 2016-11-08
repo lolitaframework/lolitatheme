@@ -2,19 +2,20 @@
     <?php if ($crumbs) :
         $numItems = count($crumbs);
         $i = 0;
-    ?> 
+    ?>
+
         <!-- b-breadcrumbs -->
-        <div class="b-breadcrumbs l-content-aside__content-item">
+        <div class="b-breadcrumbs">
             <nav>
                 <ul class="b-breadcrumbs__crumbs">
                     <?php foreach ($crumbs as $crumb) : ?>
                         <?php if (null === $crumb->getLink()) : ?>
                             <li class="b-breadcrumbs__crumb">
-                                <a href="#" class="b-breadcrumbs__link b-breadcrumbs__link--disabled"><?php echo $crumb->getLabel() ?></a>
+                                <a href="#" class="b-breadcrumbs__crumb__link b-breadcrumbs__crumb__link--disabled"><?php echo $crumb->getLabel() ?></a>
                             </li>
                         <?php else : ?>
                             <li class="b-breadcrumbs__crumb">
-                                <a href="<?php echo $crumb->getLink() ?>" class="b-breadcrumbs__link"><?php echo $crumb->getLabel() ?></a>
+                                <a href="<?php echo $crumb->getLink() ?>" class="b-breadcrumbs__crumb__link"><?php echo $crumb->getLabel() ?></a>
                             </li>
                         <?php endif ?>
                         <?php if (++$i !== $numItems) : ?>

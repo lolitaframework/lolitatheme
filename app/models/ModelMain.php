@@ -178,6 +178,11 @@ class ModelMain
                 'text'    => $args['prev_text'],
                 'is_prev' => true,
             );
+        } else {
+            $page_links[] = array(
+                'text'    => $args['prev_text'],
+                'is_prev' => true,
+            );
         }
         for ($n = 1; $n <= $total; $n++) {
             if ($n == $current) :
@@ -208,7 +213,7 @@ class ModelMain
                 endif;
             endif;
         }
-        if ($args['prev_next'] && $current && ($current < $total || -1 == $total)) :
+        if ($args['prev_next'] && $current && ($current < $total || -1 == $total)) {
             $link = str_replace('%_%', $args['format'], $args['base']);
             $link = str_replace('%#%', $current + 1, $link);
             if ($add_args) {
@@ -222,7 +227,12 @@ class ModelMain
                 'text'    => $args['next_text'],
                 'is_next' => true,
             );
-        endif;
+        } else {
+            $page_links[] = array(
+                'text'    => $args['next_text'],
+                'is_next' => true,
+            );
+        }
         switch ($args['type']) {
             case 'array':
                 return $page_links;

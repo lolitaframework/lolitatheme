@@ -1,8 +1,8 @@
 <?php
-namespace daxx\app\widgets\breadcrumbs\engine\Trails;
+namespace lolitatheme\app\widgets\breadcrumbs\engine\Trails;
 
-use \daxx\app\widgets\breadcrumbs\engine\Crumb;
-use \daxx\LolitaFramework\Core\Wp;
+use \lolitatheme\app\widgets\breadcrumbs\engine\Crumb;
+use \lolitatheme\LolitaFramework\Core\Wp;
 
 abstract class Trail
 {
@@ -39,7 +39,7 @@ abstract class Trail
      */
     public function home()
     {
-        $this->crumbs[] = new Crumb(__('Daxx', 'lolita'), home_url('/'));
+        $this->crumbs[] = new Crumb(__('Lolita Framework', 'lolita'), home_url('/'));
         return $this;
     }
 

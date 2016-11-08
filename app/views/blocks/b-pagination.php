@@ -6,9 +6,17 @@
             <?php foreach ($items as $el) : ?>
                 <li class="b-pagination__item">
                     <?php if (array_key_exists('is_prev', $el)) : ?>
-                        <a class="b-pagination__item__prev b-pagination__item__prev--disabled" href="<?php echo $el['link'] ?>"><?php echo $el['text'] ?></a>
+                        <?php if (array_key_exists('link', $el)) : ?>
+                            <a class="b-pagination__item__prev" href="<?php echo $el['link'] ?>"><?php echo $el['text'] ?></a>
+                        <?php else: ?>
+                            <a class="b-pagination__item__prev b-pagination__item__prev--disabled" href="#"><?php echo $el['text'] ?></a>
+                        <?php endif ?>
                     <?php elseif (array_key_exists('is_next', $el)) : ?>
-                        <a class="b-pagination__item__next" href="<?php echo $el['link'] ?>"><?php echo $el['text'] ?></a>
+                        <?php if (array_key_exists('link', $el)) : ?>
+                            <a class="b-pagination__item__next" href="<?php echo $el['link'] ?>"><?php echo $el['text'] ?></a>
+                        <?php else : ?>
+                            <a class="b-pagination__item__next b-pagination__item__prev--disabled" href="#"><?php echo $el['text'] ?></a>
+                        <?php endif ?>
                     <?php elseif (array_key_exists('link', $el)) : ?>
                         <a class="b-pagination__item__link" href="<?php echo $el['link'] ?>"><?php echo $el['text'] ?></a>
                     <?php else : ?>

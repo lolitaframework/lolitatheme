@@ -1,5 +1,5 @@
 <?php
-namespace daxx\app\widgets\breadcrumbs\engine;
+namespace lolitatheme\app\widgets\breadcrumbs\engine;
 
 class Crumb
 {

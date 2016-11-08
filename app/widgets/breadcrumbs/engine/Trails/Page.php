@@ -1,7 +1,7 @@
 <?php
-namespace daxx\app\widgets\breadcrumbs\engine\Trails;
+namespace lolitatheme\app\widgets\breadcrumbs\engine\Trails;
 
-use \daxx\app\widgets\breadcrumbs\engine\Crumb;
+use \lolitatheme\app\widgets\breadcrumbs\engine\Crumb;
 
 class Page extends Trail
 {

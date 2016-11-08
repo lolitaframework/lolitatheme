@@ -1,10 +1,10 @@
 <?php
-namespace daxx\app\widgets\breadcrumbs\engine;
+namespace lolitatheme\app\widgets\breadcrumbs\engine;
 
-use \daxx\LolitaFramework\Core\Route;
-use \daxx\LolitaFramework\Core\Str;
-use \daxx\LolitaFramework\Core\View;
-use \daxx\app\widgets\breadcrumbs\engine\Trails\Trail;
+use \lolitatheme\LolitaFramework\Core\Route;
+use \lolitatheme\LolitaFramework\Core\Str;
+use \lolitatheme\LolitaFramework\Core\View;
+use \lolitatheme\app\widgets\breadcrumbs\engine\Trails\Trail;
 
 class Engine
 {

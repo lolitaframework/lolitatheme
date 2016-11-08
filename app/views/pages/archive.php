@@ -26,24 +26,7 @@
             <h1 class="l-archive__title__h1"><?php echo $qo->name ?></h1>
         </div>
         <div class="l-archive__breadcrumbs">
-            <?php //echo do_shortcode('[lolita-breadcrumbs_sc]'); ?>
-            <!-- b-breadcrumbs -->
-            <div class="b-breadcrumbs">
-                <nav>
-                    <ul class="b-breadcrumbs__crumbs">
-                        <li class="b-breadcrumbs__crumb">
-                            <a href="#" class="b-breadcrumbs__crumb__link">Lolita Framework</a>
-                        </li>
-                        <li class="b-breadcrumbs__crumb">
-                            <a href="#" class="b-breadcrumbs__crumb__link">Configuration</a>
-                        </li>
-                        <li class="b-breadcrumbs__crumb">
-                            <a href="#" class="b-breadcrumbs__crumb__link b-breadcrumbs__crumb__link--disabled">Routes</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <!-- /b-breadcrumbs -->
+            <?php echo do_shortcode('[lolita-breadcrumbs_sc]'); ?>
         </div>
         <div class="l-archive__meta">
             <?php echo (int) $query->found_posts ?> <?php _e('results found', 'lolita') ?>
@@ -53,12 +36,12 @@
                 <div class="l-archive__archive__results__item">
                     <!-- b-post-preview -->
                     <article class="b-post-preview">
-                        <a href="#" class="b-post-preview__thumbnail">
-                            <?php if ($p->img()->isInitialized()) : ?>
+                        <?php if ($p->img()->isInitialized()) : ?>
+                        <a href="<?php echo $p->link() ?>" class="b-post-preview__thumbnail">
                                 <img class="b-post-preview__thumbnail__image" src="<?php echo $p->img()->src('200x200') ?>" alt="<?php echo $p->img()->alt() ?>">
-                            <?php endif ?>
-                            <span class="b-post-preview__thumbnail__meta">Posted on <?php echo $p->date() ?></span>
+                                <span class="b-post-preview__thumbnail__meta">Posted on <?php echo $p->date() ?></span>
                         </a>
+                        <?php endif ?>
                         <div class="b-post-preview__content">
                             <h3 class="b-post-preview__content__title"><a href="<?php echo $p->link() ?>" class="b-post-preview__content__title__link"><?php echo $p->title() ?></a></h3>
                             <div class="b-post-preview__content__excerpt">
