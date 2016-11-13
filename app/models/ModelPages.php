@@ -12,7 +12,11 @@ use \WP_Term;
 
 class ModelPages
 {
-
+    /**
+     * Attachment page
+     *
+     * @return string
+     */
     public static function attachment()
     {
         $qo = get_queried_object();
@@ -68,6 +72,43 @@ class ModelPages
             'pages' . DS . 'archive',
             array(
                 'qo'            => $qo,
+                'query'         => $query,
+                'items'         => $items,
+                'max_num_pages' => $query->max_num_pages,
+                'current_page'  => $paged,
+            )
+        );
+    }
+
+    /**
+     * Search page
+     *
+     * @return string
+     */
+    public static function search()
+    {
+        $query = new WP_Query;
+        $ppp   = (int) get_option('posts_per_page');
+        $paged = max(1, (int) get_query_var('paged'));
+        $s     = (string) get_query_var('s');
+
+        $args = array(
+            'numberposts' => $ppp,
+            'offset'      => $ppp * ($paged-1),
+            'orderby'     => 'date',
+            'order'       => 'DESC',
+            'post_type'   => array('post', 'page'),
+            'post_status' => 'publish',
+            's'           => $s,
+        );
+
+        $items = $query->query($args);
+        $items = Post::sanitize($items);
+
+        return View::make(
+            'pages' . DS . 'search',
+            array(
+                's'             => $s,
                 'query'         => $query,
                 'items'         => $items,
                 'max_num_pages' => $query->max_num_pages,

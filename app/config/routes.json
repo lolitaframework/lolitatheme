@@ -1,4 +1,5 @@
 {
+    "search" : "{{ \\lolitatheme\\ModelPages::search }}",
     "archive" : "{{ \\lolitatheme\\ModelPages::archive }}",
     "attachment" : "{{ \\lolitatheme\\ModelPages::attachment }}",
     "front" : "{{ \\lolitatheme\\ModelPages::home }}",
