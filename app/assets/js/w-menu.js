@@ -16,8 +16,7 @@
     }
 
     // add line into menu container
-    $w_menu__container.append($w_menu__undered_line);
-    $w_menu__item__has_submenu.hover( 
+    $w_menu__item__has_submenu.hover(
         function() {
             $w_menu_items_width = getMenuItemsWidth();
         },
