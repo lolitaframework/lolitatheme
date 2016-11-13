@@ -1,17 +1,19 @@
-<?php if ($li->me->menu_item_parent <= 0) : ?>
-    <?php $li_class = 'w-menu__item'; ?>
-    <?php $a_class = 'w-menu__link' ?>
+<?php if ('' !== $submenu) : ?>
+    <?php $a_class = ' w-menu__link--has_submenu'; ?>
+    <?php $li_class = ' w-menu__item--has_submenu'; ?>
 <?php else : ?>
-    <?php $li_class = 'w-menu__sub-menu-item'; ?>
-    <?php $a_class = 'w-menu__sub-menu-link' ?>
-<?php endif ?>
-<?php if ($li->hasSubmenu()) : ?>
-    <?php $li_class.= ' w-menu__item--has_submenu'; ?>
+    <?php $a_class = ''; ?>
+    <?php $li_class = ''; ?>
 <?php endif ?>
 
-<li class="<?php echo $li_class ?>">
-    <a href="<?php echo $li->me->url ?>" class="<?php echo $a_class ?> <?php echo implode(' ', $li->me->classes) ?>"><?php echo $li->me->title ?></a>
-    <?php if ($li->hasSubmenu()) : ?>
-        <?php echo $li->menu->ul($li->getSubItems(), $li) ?>
-    <?php endif ?>
-</li>
+<?php if (0 == $level) : ?>
+    <li class="w-menu__item <?php echo $li_class ?>">
+        <a href="<?php echo $p->url ?>" class="w-menu__link <?php echo $a_class ?> <?php echo implode(' ', (array) $p->classes) ?>"><?php echo $p->title ?></a>
+        <?php echo $submenu ?>
+    </li>
+<?php else : ?>
+    <li class="w-menu__sub-menu-item <?php echo $li_class ?>">
+        <a href="<?php echo $p->url ?>" class="w-menu__sub-menu-link <?php echo $a_class ?> <?php echo implode(' ', (array) $p->classes) ?>"><?php echo $p->title ?></a>
+        <?php echo $submenu ?>
+    </li>
+<?php endif ?>

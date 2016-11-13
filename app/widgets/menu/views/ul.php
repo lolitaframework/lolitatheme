@@ -1,11 +1,12 @@
-<?php if ($level <= 0) : ?>
-    <?php $ul_class = 'w-menu__container'; ?>
+<?php if (0 == $level) : ?>
+<!-- b-menu -->
+<nav class="b-menu b-menu--header l-header__top-item">
+    <ul class="w-menu__container">
+        <?php echo $items ?>
+    </ul>
+</nav>
 <?php else : ?>
-    <?php $ul_class = 'w-menu__sub-menu'; ?>
+    <ul class="w-menu__sub-menu">
+        <?php echo $items ?>
+    </ul>
 <?php endif ?>
-
-<ul class="<?php echo $ul_class ?>">
-    <?php foreach ($ul as $el) : ?>
-        <?php echo $el->render() ?>
-    <?php endforeach ?>
-</ul>

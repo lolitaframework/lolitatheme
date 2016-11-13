@@ -43,18 +43,19 @@ class Engine
     {
         $menu  = false;
         if (array_key_exists('location', $instance)) {
-            $location = $instance['location'];
-            $loc_id   = array_flip((array) self::locations());
-            $menu_id  = 0;
-            if (array_key_exists($location, $loc_id)) {
-                $menu_id = $loc_id[ $location ];
-            }
+            $menu_id = (int) $instance['location'];
         }
         if (array_key_exists('menu', $instance)) {
             $menu_id = (int) $instance['menu'];
         }
-
         $menu = new Menu($menu_id, $instance);
-        echo $menu->render();
+        echo View::make(
+            dirname(__DIR__).DS.'views'.DS.'menu.php',
+            array(
+                'args'     => $args,
+                'instance' => $instance,
+                'menu'     => $menu,
+            )
+        );
     }
 }

@@ -4,7 +4,6 @@ namespace lolitatheme\app\widgets\menu\engine;
 
 use \lolitatheme\LolitaFramework\Core\View;
 use \lolitatheme\LolitaFramework\Core\Arr;
-use \lolitatheme\LolitaFramework\Core\Decorators\Post;
 
 class Menu
 {
@@ -62,7 +61,7 @@ class Menu
     public function initGraph()
     {
         foreach ($this->items as $item) {
-            $this->graph[ $item->menu_item_parent ][] = $item;
+            $this->graph[ $item->menu_item_parent ][] = new MenuItem($item, $this);
         }
         return $this;
     }
@@ -78,34 +77,67 @@ class Menu
     }
 
     /**
-     * Render menu
+     * Get subitems
      *
      * @param  integer $parent
-     * @param  integer $level
+     * @return mixed
+     */
+    public function getSubItems($parent = 0)
+    {
+        if (array_key_exists($parent, $this->graph)) {
+            return $this->graph[ $parent ];
+        }
+        return false;
+    }
+
+    /**
+     * Menu items
+     *
+     * @return mixed
+     */
+    public function getItems()
+    {
+        return $this->items;
+    }
+
+    /**
+     * Render menu
+     *
      * @return string
      */
-    public function render($parent = 0, $level = 0)
+    public function render()
     {
-        $items = array();
-        if (array_key_exists($parent, $this->graph)) {
-            foreach ($this->graph[ $parent ] as $el) {
-                $items[] = View::make(
-                    dirname(__DIR__) . DS . 'views' . DS . 'li.php',
-                    array(
-                        'p'       => $el,
-                        'level'   => $level,
-                        'submenu' => $this->render($el->ID, $level + 1),
-                    )
-                );
-            }
-            return View::make(
-                dirname(__DIR__) . DS . 'views' . DS . 'ul.php',
-                array(
-                    'items' => implode('', $items),
-                    'level' => $level,
-                )
-            );
+        if (false === $this->items) {
+            return '';
         }
-        return '';
+        return View::make(
+            dirname(__DIR__) . DS . 'views' . DS . 'tree.php',
+            array(
+                'ul'    => $this->ul($this->getSubItems()),
+                'menu'  => $this->menu,
+                'class' => Arr::get($this->instance, 'class'),
+            )
+        );
+    }
+
+    /**
+     * Render ul
+     *
+     * @param  array $items
+     * @return string
+     */
+    public function ul($items, $parent_item = null)
+    {
+        if (is_array($items) && count($items)) {
+            $level = (int) ($items[0]->me->menu_item_parent > 0);
+        }
+        return View::make(
+            dirname(__DIR__) . DS . 'views' . DS . 'ul.php',
+            array(
+                'ul'     => $items,
+                'level'  => $level,
+                'parent' => $parent_item,
+            )
+        );
     }
 }
