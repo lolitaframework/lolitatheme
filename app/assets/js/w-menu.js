@@ -3,7 +3,6 @@
     $w_menu__item = $('.w-menu__item');
     $w_menu__item__has_submenu = $('.w-menu__item.w-menu__item--has_submenu');
     $w_menu__container = $('.w-menu__container');
-    $w_menu__undered_line = $('<span class="w-menu__undered-line"></span>');
 
     // get menu items weight
     function getMenuItemsWidth() {
@@ -21,11 +20,9 @@
     $w_menu__item__has_submenu.hover( 
         function() {
             $w_menu_items_width = getMenuItemsWidth();
-            $w_menu__undered_line.animate({'width': $w_menu_items_width + 'px'}, 100);
         },
         function() {
             $w_menu_items_width = getMenuItemsWidth();
-            $w_menu__undered_line.animate({'width': '0'}, 100);
         }
     );
 
