@@ -13,7 +13,7 @@ namespace LolitaFramework {
             (<any>window).im = img_large;
             img_large.onload = function () {
                 jQuery('.w-banner__image').addClass('loaded');
-                jQuery('.w-banner__image').attr('background-image: url(' + img_large.src + ');');
+                jQuery('.w-banner__image').attr('style', 'background-image: url(' + img_large.src + ');');
             };
         }
     }
