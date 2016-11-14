@@ -19,6 +19,11 @@
             </div>
         </div>
         <?php if ($p->img()->isInitialized()) : ?>
+            <?php
+            echo '<pre>';
+            var_dump($p->img()->mime());
+            echo '</pre>';
+            ?>
             <div class="l-header__botton">
                 <!-- w-banner -->
                 <div class="w-banner w-banner--header">
