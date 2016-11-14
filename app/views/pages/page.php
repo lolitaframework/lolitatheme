@@ -45,8 +45,8 @@
                     img_large.src = placeholder.dataset.large; 
                     img_large.onload = function () {
                         img_large.classList.add('loaded');
+                        placeholder.style = "background-image: url('" + img_large.src + "');";
                     };
-                    placeholder.appendChild(img_large);
                 }
             </script>
         <?php endif ?>
