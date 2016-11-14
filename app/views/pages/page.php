@@ -47,6 +47,7 @@
                         placeholder.classList.add('loaded');
                         console.log("background-image: url('" + img_large.src + "');");
                         placeholder.style = "background-image: url('" + img_large.src + "');";
+                        window.p = placeholder;
                     };
                 }
             </script>
