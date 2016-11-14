@@ -6,13 +6,13 @@ var LolitaFramework;
          * Constructor
          */
         function SmartBannerImage() {
-            var img_large, placeholder;
-            placeholder = document.querySelector('.w-banner__image');
+            var img_large;
             img_large = new Image();
-            img_large.src = placeholder.dataset.large;
+            img_large.src = jQuery('.w-banner__image').data('large');
+            window.im = img_large;
             img_large.onload = function () {
-                placeholder.classList.add('loaded');
-                placeholder.style.backgroundImage = "url('" + img_large.src + "');";
+                jQuery('.w-banner__image').addClass('loaded');
+                jQuery('.w-banner__image').attr('background-image: url(' + img_large.src + ');');
             };
         }
         return SmartBannerImage;
