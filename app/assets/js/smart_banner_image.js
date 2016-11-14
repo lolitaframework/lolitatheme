@@ -7,8 +7,12 @@ var LolitaFramework;
          */
         function SmartBannerImage() {
             setTimeout(function () {
+                var i = new Image();
                 console.log('loading large image...');
-                jQuery('.w-banner__image').attr('style', 'background-image: url(' + jQuery('.w-banner__image').data('large') + ');');
+                i.src = jQuery('.w-banner__image').data('large');
+                i.onload = function () {
+                    jQuery('.w-banner__image').attr('style', 'background-image: url(' + i.src + ');');
+                };
             }, 500);
         }
         return SmartBannerImage;
