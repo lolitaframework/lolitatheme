@@ -45,6 +45,7 @@
                     img_large.src = placeholder.dataset.large; 
                     img_large.onload = function () {
                         placeholder.classList.add('loaded');
+                        console.log("background-image: url('" + img_large.src + "');");
                         placeholder.style = "background-image: url('" + img_large.src + "');";
                     };
                 }
