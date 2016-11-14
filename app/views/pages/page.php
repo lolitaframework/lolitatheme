@@ -103,7 +103,7 @@
     <!-- l-footer -->
     <div class="l-footer">
         <div class="l-footer__row">
-            <?php echo do_shortcode('[w-follow]') ?>
+            <?php //echo do_shortcode('[w-follow]') ?>
         </div>
         <div class="l-footer__row">
             <?php echo do_shortcode('[w-social-buttons]') ?>
