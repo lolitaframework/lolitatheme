@@ -19,14 +19,23 @@
             </div>
         </div>
         <?php if ($p->img()->isInitialized()) : ?>
-            <?php $w_banner_gif = $p->img()->mime() == 'image/gif' ? 'w-banner--gif' : ''; ?>
-            <div class="l-header__botton">
-                <!-- w-banner -->
-                <div class="w-banner w-banner--header <?php echo $w_banner_gif ?>">
-                    <div class="w-banner__image" style="background-image: url('<?php echo $p->img()->src('large') ?>');"></div>
+            <?php if ('image/gif' == $p->img()->mime()) : ?>
+                <div class="l-header__botton">
+                    <!-- w-banner -->
+                    <div class="w-banner w-banner--header <?php echo $w_banner_gif ?>">
+                        <div class="w-banner__image" style="background-image: url('<?php echo $p->img()->src('20x20') ?>');" data-image="<?php echo $p->img()->src('full') ?>"></div>
+                    </div>
+                    <!-- /w-banner -->
                 </div>
-                <!-- /w-banner -->
-            </div>
+            <?php else : ?>
+                <div class="l-header__botton">
+                    <!-- w-banner -->
+                    <div class="w-banner w-banner--header">
+                        <div class="w-banner__image" style="background-image: url('<?php echo $p->img()->src('large') ?>');"></div>
+                    </div>
+                    <!-- /w-banner -->
+                </div>
+            <?php endif ?>
         <?php endif ?>
     </header>
     <!-- /l-header -->
