@@ -28,26 +28,9 @@
                     <!-- /w-banner -->
                 </div>
                 <script type="text/javascript">
-                    var LolitaFramework;
-                    (function (LolitaFramework) {
-                        var SmartBannerImage = (function () {
-                            /**
-                             * Constructor
-                             */
-                            function SmartBannerImage() {
-                                var _this = this;
-                                jQuery(window).on('onload', function () { return _this.windowLoad(); });
-                            }
-                            SmartBannerImage.prototype.windowLoad = function () {
-                                console.log('Loading...');
-                            };
-                            return SmartBannerImage;
-                        }());
-                        LolitaFramework.SmartBannerImage = SmartBannerImage;
-                        if (jQuery('.w-banner__image').length) {
-                            window.LolitaFramework.smart_banner_image = new SmartBannerImage();
-                        }
-                    })(LolitaFramework || (LolitaFramework = {}));
+                    window.onload = function() {
+                        console.log('loading...');
+                    }
                 </script>
             <?php else : ?>
                 <div class="l-header__botton">
