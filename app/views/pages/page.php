@@ -27,11 +27,6 @@
                     </div>
                     <!-- /w-banner -->
                 </div>
-                <script type="text/javascript">
-                    window.onload = function() {
-                        console.log('loading...');
-                    }
-                </script>
             <?php else : ?>
                 <div class="l-header__botton">
                     <!-- w-banner -->
@@ -41,6 +36,19 @@
                     <!-- /w-banner -->
                 </div>
             <?php endif ?>
+            <script type="text/javascript">
+                window.onload = function() {
+                    console.log('loading...');
+                    var img_large, placeholder;
+                    placeholder = document.querySelector('.w-banner__image');
+                    img_large = new Image();
+                    img_large.src = placeholder.dataset.large; 
+                    img_large.onload = function () {
+                        img_large.classList.add('loaded');
+                    };
+                    placeholder.appendChild(img_large);
+                }
+            </script>
         <?php endif ?>
     </header>
     <!-- /l-header -->
