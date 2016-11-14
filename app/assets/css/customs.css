@@ -11,3 +11,9 @@
 .b-article__header__title{
     margin-top: 0;
 }
+
+pre.prettyprint {
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 4px;
+}
