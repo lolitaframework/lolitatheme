@@ -23,7 +23,7 @@
                 <div class="l-header__botton">
                     <!-- w-banner -->
                     <div class="w-banner w-banner--header <?php echo $w_banner_gif ?>">
-                        <div class="w-banner__image" style="background-image: url('<?php echo $p->img()->src('20x20') ?>');" data-image="<?php echo $p->img()->src('full') ?>"></div>
+                        <div class="w-banner__image" style="background-image: url('<?php echo $p->img()->src('20x20') ?>');" data-large="<?php echo $p->img()->src('large') ?>"></div>
                     </div>
                     <!-- /w-banner -->
                 </div>
