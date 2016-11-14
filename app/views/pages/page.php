@@ -19,14 +19,10 @@
             </div>
         </div>
         <?php if ($p->img()->isInitialized()) : ?>
-            <?php
-            echo '<pre>';
-            var_dump($p->img()->mime());
-            echo '</pre>';
-            ?>
+            <?php $w_banner_gif = $p->img()->mime() == 'image/gif' ? 'w-banner--gif' : ''; ?>
             <div class="l-header__botton">
                 <!-- w-banner -->
-                <div class="w-banner w-banner--header">
+                <div class="w-banner w-banner--header <?php echo $w_banner_gif ?>">
                     <div class="w-banner__image" style="background-image: url('<?php echo $p->img()->src('large') ?>');"></div>
                 </div>
                 <!-- /w-banner -->
