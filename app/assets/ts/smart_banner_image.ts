@@ -10,10 +10,10 @@ namespace LolitaFramework {
             setTimeout(
                 function() {
                     var i = new Image();
-                    console.log('loading large image...');
                     i.src = jQuery('.w-banner__image').data('large');
                     i.onload = function() {
                         jQuery('.w-banner__image').attr('style', 'background-image: url(' + i.src + ');');
+                        jQuery('.w-banner__image').parent().removeClass('w-banner--loading');
                     }
                 },
                 500
