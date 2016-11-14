@@ -1,6 +1,10 @@
 {
+    "deregister_scripts" : [
+        "jquery"
+    ],
     "scripts" : [
-        ["jquery"],
+        ["jquery", "/wp-includes/js/jquery/jquery.js", [], "1.12.4", true ],
+        ["jquery-migrate", "/wp-includes/js/jquery/jquery-migrate$suffix.js", [], "1.4.1", true],
         ["wp-util"],
         ["blocks.common", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/blocks.common.js", [], "1.0", true],
         ["multilevel_menu", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/multilevel_menu.js", [], "1.0", true],
