@@ -7,12 +7,12 @@
         ["jquery-migrate", "/wp-includes/js/jquery/jquery-migrate$suffix.js", [], "1.4.1", true],
         ["wp-util"],
         ["blocks.common", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/blocks.common.js", [], "1.0", true],
-        ["multilevel_menu", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/multilevel_menu.js", [], "1.0", true],
+        ["multilevel_menu", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/multilevel_menu.min.js", [], "1.0", true],
         ["w-menu", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-menu.js", [], "1.0", true],
         ["w-logo", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-logo.js", [], "1.0", true],
         ["w-search-block", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-search-block.js", [], "1.0", true],
         ["main", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/main.js", [], "1.0", true],
-        ["search", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/search.js", ["jquery", "wp-util"], "1.0", true]
+        ["search", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/search.min.js", ["jquery", "wp-util"], "1.0", true]
     ],
     "async_styles" : [
         ["opensans", "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i", [], "1.0", "all"],
