@@ -7,14 +7,13 @@ namespace LolitaFramework {
          * Constructor
          */
         constructor() {
-            var img_large;
-            img_large = new Image();
-            img_large.src = jQuery('.w-banner__image').data('large');
-            (<any>window).im = img_large;
-            img_large.onload = function () {
-                jQuery('.w-banner__image').addClass('loaded');
-                jQuery('.w-banner__image').attr('style', 'background-image: url(' + img_large.src + ');');
-            };
+            setTimeout(
+                function() {
+                    console.log('loading large image...');
+                    jQuery('.w-banner__image').attr('style', 'background-image: url(' + jQuery('.w-banner__image').data('large') + ');');
+                },
+                500
+            );
         }
     }
     if(jQuery('.w-banner__image').length) {
