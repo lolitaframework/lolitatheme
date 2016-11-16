@@ -121,8 +121,7 @@ class ModelShortcodes
                         'posts_per_page'   => 3,
                         'exclude'          => $p->ID,
                         'category'         => implode(',', Arr::pluck($p->categories, 'term_id')),
-                        'orderby'          => 'date',
-                        'order'            => 'DESC',
+                        'orderby'          => 'rand',
                         'post_type'        => 'post',
                         'post_status'      => 'publish',
                     )
