@@ -18,7 +18,7 @@ class ModelActions
      */
     public static function search()
     {
-        check_ajax_referer('Lolita Framework', 'nonce');
+        //check_ajax_referer('Lolita Framework', 'nonce');
         $args = array(
             'posts_per_page' => 3,
             'orderby'        => 'date',
