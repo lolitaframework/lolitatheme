@@ -9,5 +9,6 @@
     "b-might-like" : ["\\lolitatheme\\ModelShortcodes", "bMightLike"],
     "w-social-buttons" : ["\\lolitatheme\\ModelShortcodes", "wSocialButtons"],
     "w-follow" : ["\\lolitatheme\\ModelShortcodes", "wFollow"],
+    "w-banner" : ["\\lolitatheme\\ModelShortcodes", "wBanner"],
     "b-pagination" : ["\\lolitatheme\\ModelShortcodes", "bPagination"]
 }
