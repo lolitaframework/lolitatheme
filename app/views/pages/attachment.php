@@ -3,7 +3,7 @@
     <section class="l-full-screen">
         <div class="l-full-screen__item b-attachment">
             <!-- b-attachment -->
-            <div class="b-attachment <?php $p->img()->isInitialized() ? '' : echo 'b-attachment--file' ?>">
+            <div class="b-attachment <?php echo $p->img()->isInitialized() ? '' : 'b-attachment--file' ?>">
                 <?php if ($p->img()->isInitialized()) : ?>
                     <div class="b-attachment__image" style="background-image: url('<?php echo $p->img()->src('250x250') ?>');"></div>
                 <?php else : ?>
