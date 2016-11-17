@@ -217,7 +217,7 @@ class ModelShortcodes
         $img = new Img($id);
         if ($img->isInitialized()) {
             $class = 'w-banner w-banner--header w-banner--loading';
-            if ('image/gif' == $p->img()->mime()) {
+            if ('image/gif' == $img->mime()) {
                 $class = 'w-banner w-banner--header w-banner--loading w-banner--gif';
             }
             return View::make(
