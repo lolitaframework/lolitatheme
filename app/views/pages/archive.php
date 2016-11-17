@@ -45,7 +45,8 @@
                         <div class="b-post-preview__content">
                             <h3 class="b-post-preview__content__title"><a href="<?php echo $p->link() ?>" class="b-post-preview__content__title__link"><?php echo $p->title() ?></a></h3>
                             <div class="b-post-preview__content__excerpt">
-                                <?php echo $p->content(500, '...') ?>
+                                <?php echo get_the_excerpt($p->ID); ?>
+                                <?php //echo $p->content(500, '...') ?>
                             </div>
                             <a href="<?php echo $p->link() ?>" class="b-post-preview__content__read-more"><?php _e('Read more', 'lolita') ?></a>
                         </div>
