@@ -3,9 +3,13 @@
     background-color: #000;
 }
 
+.w-banner.w-banner--header.w-banner--loading{
+    overflow: hidden;
+}
+
 .w-banner.w-banner--header.w-banner--loading .w-banner__image{
     filter: blur(50px);
-    transform: scale(1);
+    transform: scale(2);
 }
 
 .b-article__header__title{
