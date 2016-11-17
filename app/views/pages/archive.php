@@ -45,7 +45,11 @@
                         <div class="b-post-preview__content">
                             <h3 class="b-post-preview__content__title"><a href="<?php echo $p->link() ?>" class="b-post-preview__content__title__link"><?php echo $p->title() ?></a></h3>
                             <div class="b-post-preview__content__excerpt">
-                                <?php echo preg_replace('/<pre class="prettyprint.*/s', '', $p->post_content ) ?>
+                                <?php
+                                $content = preg_replace('/<pre class="prettyprint.*/s', '', $p->post_content);
+                                $content = str_replace('<h2>Example usage</h2>', '', $content);
+                                echo $content;
+                                ?>
                             </div>
                             <a href="<?php echo $p->link() ?>" class="b-post-preview__content__read-more"><?php _e('Read more', 'lolita') ?></a>
                         </div>
