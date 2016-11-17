@@ -6,6 +6,7 @@ use \lolitatheme\LolitaFramework\Core\View;
 use \lolitatheme\LolitaFramework\Core\Arr;
 use \lolitatheme\LolitaFramework\Core\Data;
 use \lolitatheme\LolitaFramework\Core\Decorators\Post;
+use \lolitatheme\LolitaFramework\Core\Decorators\Img;
 
 class ModelShortcodes
 {
@@ -203,5 +204,30 @@ class ModelShortcodes
                 'max_num_pages' => $max_num_pages,
             )
         );
+    }
+
+    /**
+     * w-banner
+     *
+     * @return mixed
+     */
+    public static function wBanner($atts = array())
+    {
+        $id  = (int) Arr::get($atts, 'img');
+        $img = new Img($id);
+        if ($img->isInitialized()) {
+            $class = 'w-banner w-banner--header w-banner--loading';
+            if ('image/gif' == $p->img()->mime()) {
+                $class = 'w-banner w-banner--header w-banner--loading w-banner--gif';
+            }
+            return View::make(
+                'blocks' . DS . 'w-banner',
+                array(
+                    'class' => $class,
+                    'img'   => $img,
+                )
+            );
+        }
+        return '';
     }
 }
