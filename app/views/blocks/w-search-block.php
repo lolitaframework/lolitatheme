@@ -18,7 +18,7 @@
     <div class="w-search-block__b-search-form">
         <!-- b-search-form -->
         <form class="<?php echo $b_class ?>" action="<?php echo home_url() ?>" method="get" accept-charset="utf-8">
-            <input type="search" name="s" class="b-search-form__input" value="" placeholder="<?php _e('Search...', 'lolita') ?>" autofocus>
+            <input type="search" name="s" class="b-search-form__input" value="" placeholder="<?php _e('Search...', 'lolita') ?>" autofocus autocomplete="off">
         </form>
         <!-- /b-search-form -->
     </div>
