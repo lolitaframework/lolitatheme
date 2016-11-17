@@ -19,6 +19,9 @@ class ModelActions
     public static function search()
     {
         //check_ajax_referer('Lolita Framework', 'nonce');
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
         $args = array(
             'posts_per_page' => 3,
             'orderby'        => 'date',
