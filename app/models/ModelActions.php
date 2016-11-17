@@ -32,10 +32,10 @@ class ModelActions
         );
         $items   = Post::sanitize(get_posts($args));
         $return  = array();
-        $content = ModelMain::removeCodeFromContent($p->content());
-        $content = Str::limit($content, 255);
-        $content = wp_strip_all_tags($content);
         foreach ($items as &$p) {
+            $content = ModelMain::removeCodeFromContent($p->content());
+            $content = Str::limit($content, 255);
+            $content = wp_strip_all_tags($content);
             $return[] = array(
                 'url'     => $p->link(),
                 'title'   => $p->title(),
