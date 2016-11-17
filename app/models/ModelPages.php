@@ -2,6 +2,7 @@
 
 namespace lolitatheme;
 
+use \lolitatheme\LolitaFramework;
 use \lolitatheme\LolitaFramework\Core\Decorators\Post;
 use \lolitatheme\LolitaFramework\Core\Decorators\Term;
 use \lolitatheme\LolitaFramework\Core\View;
@@ -31,11 +32,12 @@ class ModelPages
         return View::make(
             'pages' . DS . 'attachment',
             array(
-                'p'         => $p,
-                'file_size' => size_format(filesize($file)),
-                'info'      => $info,
-                'width'     => $width,
-                'height'    => $height,
+                'p'             => $p,
+                'file_size'     => size_format(filesize($file)),
+                'info'          => $info,
+                'width'         => $width,
+                'height'        => $height,
+                'default_image' => LolitaFramework::baseUrl() . '/app/assets/img/b-attachment--file.png'
             )
         );
     }

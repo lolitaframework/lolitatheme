@@ -3,11 +3,11 @@
     <section class="l-full-screen">
         <div class="l-full-screen__item b-attachment">
             <!-- b-attachment -->
-            <div class="b-attachment">
+            <div class="b-attachment <?php $p->img()->isInitialized() ? '' : echo 'b-attachment--file' ?>">
                 <?php if ($p->img()->isInitialized()) : ?>
                     <div class="b-attachment__image" style="background-image: url('<?php echo $p->img()->src('250x250') ?>');"></div>
                 <?php else : ?>
-                    <div class="b-attachment__image" style="background-image: url('<?php echo wp_mime_type_icon($p->ID) ?>');"></div>
+                    <div class="b-attachment__image" style="background-image: url('<?php echo $default_image;"></div>
                 <?php endif ?>
                 <div class="b-attachment__info">
                     <ul class="b-attachment__items">
