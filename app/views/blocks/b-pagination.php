@@ -20,7 +20,7 @@
                     <?php elseif (array_key_exists('link', $el)) : ?>
                         <a class="b-pagination__item__link" href="<?php echo $el['link'] ?>"><?php echo $el['text'] ?></a>
                     <?php else : ?>
-                        <?php if ('...' !== $el['text']) : ?>
+                        <?php if ('…' !== $el['text']) : ?>
                             <a class="b-pagination__item__link b-pagination__item__link--active" href="#"><?php echo $el['text'] ?></a>
                         <?php else : ?>
                             <a class="b-pagination__item__link" href="#"><?php echo $el['text'] ?></a>
