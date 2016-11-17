@@ -1,22 +1,22 @@
 {
-    "deregister_scripts" : [
+    "deregister_scripts": [
         "jquery"
     ],
-    "scripts" : [
-        ["jquery", "/wp-includes/js/jquery/jquery.js", [], "1.12.4", true ],
+    "scripts": [
+        ["jquery", "/wp-includes/js/jquery/jquery.js", [], "1.12.4", true],
         ["jquery-migrate", "/wp-includes/js/jquery/jquery-migrate$suffix.js", [], "1.4.1", true],
         ["wp-util"],
-        ["blocks.common", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/blocks.common.js", [], "1.0", true],
-        ["multilevel_menu", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/multilevel_menu.min.js", [], "1.0", true],
-        ["w-menu", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-menu.js", [], "1.0", true],
-        ["w-logo", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-logo.js", [], "1.0", true],
-        ["w-search-block", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-search-block.js", [], "1.0", true],
-        ["main", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/main.js", [], "1.0", true],
+        ["blocks.common", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/blocks.common.js", ["jquery"], "1.0", true],
+        ["multilevel_menu", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/multilevel_menu.min.js", ["jquery"], "1.0", true],
+        ["w-menu", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-menu.js", ["jquery"], "1.0", true],
+        ["w-logo", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-logo.js", ["jquery"], "1.0", true],
+        ["w-search-block", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-search-block.js", ["jquery"], "1.0", true],
+        ["main", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/main.js", ["jquery"], "1.0", true],
         ["search", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/search.min.js", ["jquery", "wp-util"], "1.0", true],
         ["smart_banner_image", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/smart_banner_image.js", ["jquery", "wp-util"], "1.0", true],
         ["prettify", "https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js", ["jquery", "wp-util"], "1.0", true]
     ],
-    "async_styles" : [
+    "async_styles": [
         ["opensans", "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i", [], "1.0", "all"],
         ["libs", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/css/libs.css", [], "1.0", "all"],
         ["main", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/css/main.css", [], "1.0", "all"],

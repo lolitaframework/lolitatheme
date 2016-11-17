@@ -13,16 +13,16 @@
                         56,
                         '',
                         esc_attr($comment->comment_author),
-                        array('class' => 'b-comments__item__img')
+                        array('class' => 'b-comments__item__comment__img')
                     );
                     ?>        
                     <div class="b-comments__item__comment__inner">
-                        <div class="b-comments__item__comment__author"><?php echo $comment->comment_author ?></div>
-                        <div class="b-comments__item__comment__meta"><?php echo $comment->date() ?> at <?php echo $comment->time() ?></div>
-                        <div class="b-comments__item__comment__text">
+                        <div class="b-comments__item__comment__inner__author"><?php echo $comment->comment_author ?></div>
+                        <div class="b-comments__item__comment__inner__meta"><?php echo $comment->date() ?> at <?php echo $comment->time() ?></div>
+                        <div class="b-comments__item__comment__inner__text">
                             <?php echo $comment->comment_content ?>
                         </div>
-                        <a href="<?php echo $comment->reply() ?>" class="b-comments__item__comment__reply">Reply</a>
+                        <a href="<?php echo $comment->reply() ?>" class="b-comments__item__comment__inner__reply">Reply</a>
                     </div>        
                 </div>
                 <?php if (count($comment->getChildren())) : ?>
