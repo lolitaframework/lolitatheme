@@ -7,7 +7,7 @@
                 <?php if ($p->img()->isInitialized()) : ?>
                     <div class="b-attachment__image" style="background-image: url('<?php echo $p->img()->src('250x250') ?>');"></div>
                 <?php else : ?>
-                    <div class="b-attachment__image" style="background-image: url('<?php echo $default_image;"></div>
+                    <div class="b-attachment__image" style="background-image: url('<?php echo $default_image ?>');"></div>
                 <?php endif ?>
                 <div class="b-attachment__info">
                     <ul class="b-attachment__items">
