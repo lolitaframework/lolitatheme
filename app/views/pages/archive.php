@@ -45,8 +45,7 @@
                         <div class="b-post-preview__content">
                             <h3 class="b-post-preview__content__title"><a href="<?php echo $p->link() ?>" class="b-post-preview__content__title__link"><?php echo $p->title() ?></a></h3>
                             <div class="b-post-preview__content__excerpt">
-                                <?php $content = preg_replace('/<pre class="prettyprint.*?<\/pre>/s', '', $p->post_content );?>
-                                <?php echo $__Str::limit(strip_tags($content), 700) ?>
+                                <?php echo preg_replace('/<pre class="prettyprint.*?<\/pre>/s', '', $p->post_content ) ?>
                             </div>
                             <a href="<?php echo $p->link() ?>" class="b-post-preview__content__read-more"><?php _e('Read more', 'lolita') ?></a>
                         </div>
