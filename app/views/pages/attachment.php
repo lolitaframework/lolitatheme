@@ -5,9 +5,9 @@
             <!-- b-attachment -->
             <div class="b-attachment">
                 <?php if ($p->img()->isInitialized()) : ?>
-                    <img class="b-attachment__image" src="<?php echo $p->img()->src('250x250') ?>" alt="<?php echo $p->img()->alt() ?>" />
+                    <div class="b-attachment__image" style="background-image: url('<?php echo $p->img()->src('250x250') ?>');"></div>
                 <?php else : ?>
-                    <img class="b-attachment__image" src="<?php echo wp_mime_type_icon($p->ID) ?>" alt="<?php echo esc_attr($p->title()) ?>" />
+                    <div class="b-attachment__image" style="background-image: url('<?php echo wp_mime_type_icon($p->ID) ?>');"></div>
                 <?php endif ?>
                 <div class="b-attachment__info">
                     <ul class="b-attachment__items">
