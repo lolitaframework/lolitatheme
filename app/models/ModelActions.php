@@ -4,6 +4,7 @@ namespace lolitatheme;
 
 use \lolitatheme\LolitaFramework\Core\View;
 use \lolitatheme\LolitaFramework\Core\Arr;
+use \lolitatheme\LolitaFramework\Core\Str;
 use \lolitatheme\LolitaFramework\Core\Decorators\Post;
 
 class ModelActions
@@ -26,13 +27,16 @@ class ModelActions
             'post_status'    => 'publish',
             's'              => Arr::get($_POST, 's'),
         );
-        $items  = Post::sanitize(get_posts($args));
-        $return = array();
+        $items   = Post::sanitize(get_posts($args));
+        $return  = array();
+        $content = ModelMain::removeCodeFromContent($p->content());
+        $content = Str::limit($content, 255);
+        $content = wp_strip_all_tags($content);
         foreach ($items as &$p) {
             $return[] = array(
                 'url'     => $p->link(),
                 'title'   => $p->title(),
-                'content' => wp_strip_all_tags($p->content(255, '')),
+                'content' => $content,
                 'img'     => $p->img()->src('65x65'),
             );
         }

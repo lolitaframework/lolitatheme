@@ -4,6 +4,17 @@ namespace lolitatheme;
 
 class ModelMain
 {
+
+    /**
+     * Remove code from content
+     * @param  string $content
+     * @return string
+     */
+    public static function removeCodeFromContent($content)
+    {
+        return preg_replace('/<pre class="prettyprint.*/s', '', $content);
+    }
+
     /**
      * Retrieve paginated link for archive post pages.
      *
