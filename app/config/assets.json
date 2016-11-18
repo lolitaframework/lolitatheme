@@ -6,6 +6,7 @@
         ["jquery", "/wp-includes/js/jquery/jquery.js", [], "1.12.4", true],
         ["jquery-migrate", "/wp-includes/js/jquery/jquery-migrate$suffix.js", [], "1.4.1", true],
         ["wp-util"],
+        ["cookie", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/jquery.cookie.js", ["jquery"], "1.0", true],
         ["blocks.common", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/blocks.common.js", ["jquery"], "1.0", true],
         ["multilevel_menu", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/multilevel_menu.min.js", ["jquery"], "1.0", true],
         ["w-menu", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-menu.js", ["jquery"], "1.0", true],
