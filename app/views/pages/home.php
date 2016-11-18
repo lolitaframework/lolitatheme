@@ -14,6 +14,7 @@
                 <div class="l-front-block__w-logo l-front-block__w-logo--visible">
                     <?php echo do_shortcode('[w-logo]') ?>
                 </div>
+                <div class="l-front-block__here-arrow"></div>
             </div>
         </div>
         <!-- /l-front-block -->
