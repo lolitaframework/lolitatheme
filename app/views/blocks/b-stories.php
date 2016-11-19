@@ -9,7 +9,8 @@
                 <li class="b-stories__items__item">
                      <?php if ('' !== (string) $p->story_link) : ?>
                         <a href="<?php echo $p->story_link ?>" class="b-stories__items__item__image" style="background-image: url('<?php echo $p->img()->src('100x100') ?>');"></a>
-                        <a href="<?php echo $p->story_link ?>" class="b-stories__items__item__name"<?php echo $p->title() ?></a>
+
+                        <a href="<?php echo $p->story_link ?>" class="b-stories__items__item__name"<?php echo $p->title() ?>></a>
                     <?php else : ?>
                         <span class="b-stories__items__item__image" style="background-image: url('<?php echo $p->img()->src('100x100') ?>');"></span>
                         <span class="b-stories__items__item__name"><?php echo $p->title() ?></span>
