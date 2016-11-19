@@ -1,0 +1,7 @@
+[
+    {
+        "singular" : "Showcase",
+        "menu_icon" : "dashicons-book-alt",
+        "supports" : ["title", "editor", "thumbnail"]
+    }
+]

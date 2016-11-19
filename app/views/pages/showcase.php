@@ -1,8 +1,9 @@
 <?php echo do_shortcode('[header]') ?>
         <!-- l-like-window  -->
-        <header class="l-like-window
-    ">
-            <a class="l-like-window__back" href="#">Back</a>
+        <header class="l-like-window">
+            <a class="l-like-window__back" href="<?php echo home_url() ?>">
+                <?php _e('Back', 'lolita') ?>
+            </a>
         </header>
         <!-- /header -->
         <!-- /l-like-window  -->
@@ -183,28 +184,13 @@
         <!-- l-footer -->
         <div class="l-footer">
             <div class="l-footer__row">
-                <!-- w-social-buttons -->
-                <div class="w-social-buttons">
-                    <ul class="w-social-buttons__items">
-                        <li class="w-social-buttons__item">
-                            <a href="#" class="w-social-buttons__link"><i class="w-social-buttons__link__icon fa fa-facebook"></i></a>
-                        </li>
-                        <li class="w-social-buttons__item">
-                            <a href="#" class="w-social-buttons__link"><i class="w-social-buttons__link__icon fa fa-twitter"></i></a>
-                        </li>
-                        <li class="w-social-buttons__item">
-                            <a href="#" class="w-social-buttons__link"><i class="w-social-buttons__link__icon fa fa-instagram"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /w-social-buttons -->
+                <?php //echo do_shortcode('[w-follow]') ?>
+            </div>
+            <div class="l-footer__row">
+                <?php echo do_shortcode('[w-social-buttons]') ?>
             </div>
             <div class="l-footer__row l-footer__row--centered">
-                <!-- b-small-logo -->
-                <div class="b-small-logo">
-                    <a href="#" class="b-small-logo__item" style="background-image:url('./img/logo.svg');"></a>
-                </div>
-                <!-- /b-small-logo -->
+                <?php echo do_shortcode('[b-small-logo]') ?>
             </div>
         </div>
         <!-- /l-footer -->
