@@ -284,7 +284,7 @@ class ModelShortcodes
             'offset'           => 0,
             'orderby'          => 'date',
             'order'            => 'DESC',
-            'post_type'        => 'products',
+            'post_type'        => 'product',
             'post_status'      => 'publish',
         );
         $items = get_posts($args);
