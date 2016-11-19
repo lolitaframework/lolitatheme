@@ -6,7 +6,7 @@
         <ul class="b-products__items">
         <?php foreach ($items as $p) : ?>
             <li class="b-products__items__item">
-                <span class="b-products__items__item__image" style="background-image: url('<?php echo $p->img()->src('128x128') ?>');"></span>
+                <a href="<?php echo $p->product_link ?>" class="b-products__items__item__image" style="background-image: url('<?php echo $p->img()->src('128x128') ?>');"></a>
                 <span class="b-products__items__item__desc"><?php echo $p->content(); ?></span>
             </li>
         <?php endforeach ?>
