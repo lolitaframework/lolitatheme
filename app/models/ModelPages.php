@@ -14,6 +14,16 @@ use \WP_Term;
 class ModelPages
 {
     /**
+     * Old browser
+     *
+     * @return string
+     */
+    public static function old()
+    {
+        return View::make('pages' . DS . 'old');
+    }
+
+    /**
      * Hire use
      *
      * @return string

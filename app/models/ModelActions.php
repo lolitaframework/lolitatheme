@@ -5,10 +5,31 @@ namespace lolitatheme;
 use \lolitatheme\LolitaFramework\Core\View;
 use \lolitatheme\LolitaFramework\Core\Arr;
 use \lolitatheme\LolitaFramework\Core\Str;
+use \lolitatheme\LolitaFramework\Core\Loc;
 use \lolitatheme\LolitaFramework\Core\Decorators\Post;
 
 class ModelActions
 {
+    /**
+     * Filter old browsers
+     *
+     * @return void
+     */
+    public static function checkBrowser()
+    {
+        $response = Loc::browserVersion();
+        if (is_array($response)) {
+            if (array_key_exists('name', $response) && array_key_exists('version', $response)) {
+                $name    = $response['name'];
+                $version = (int) $response['version'];
+
+                if ('Internet Explorer' === $name && $version < 11) {
+                    wp_redirect('http://outdatedbrowser.com/');
+                    exit;
+                }
+            }
+        }
+    }
 
     /**
      * Search
