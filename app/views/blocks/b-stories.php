@@ -7,7 +7,7 @@
             <ul class="b-stories__items">
             <?php foreach ($items as $p) : ?>
                 <li class="b-stories__items__item">
-                     <?php if ('' !== (string) $p->story_link) : ?>
+                    <?php if ('' !== (string) $p->story_link) : ?>
                         <a href="<?php echo $p->story_link ?>" class="b-stories__items__item__image" style="background-image: url('<?php echo $p->img()->src('100x100') ?>');" target="_blank"></a>
 
                         <a href="<?php echo $p->story_link ?>" class="b-stories__items__item__name" target="_blank"><?php echo $p->title() ?></a>

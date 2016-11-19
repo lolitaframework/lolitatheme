@@ -15,9 +15,9 @@
             <div class="b-get-in-touch">
                 <h1 class="b-get-in-touch__title"><?php _e('Get in touch!', 'lolita') ?></h1>
                 <form id="hire-us" class="b-get-in-touch__form" action="/" method="post" accept-charset="utf-8">
-                    <input class="b-get-in-touch__form__input" type="text" name="name" value="" placeholder="<?php _e('Name', 'lolita') ?>">
-                    <input class="b-get-in-touch__form__input" type="email" name="email" value="" placeholder="<?php _e('Email', 'lolita') ?>">
-                    <textarea class="b-get-in-touch__form__textarea" name="message" placeholder="<?php _e('Write as much as you want', 'lolita') ?>"></textarea>
+                    <input class="b-get-in-touch__form__input" type="text" name="name" value="" placeholder="<?php _e('Name', 'lolita') ?>" required="required">
+                    <input class="b-get-in-touch__form__input" type="email" name="email" value="" placeholder="<?php _e('Email', 'lolita') ?>" required="required">
+                    <textarea class="b-get-in-touch__form__textarea" name="message" placeholder="<?php _e('Write as much as you want', 'lolita') ?>" required="required"></textarea>
                     <button class="b-get-in-touch__form__submit" type="submit"><?php _e('Submit', 'lolita') ?></button>
                 </form>
             </div>

@@ -1,4 +1,6 @@
 [
     ["wp_ajax_search", ["\\lolitatheme\\ModelActions", "search"]],
-    ["wp_ajax_nopriv_search", ["\\lolitatheme\\ModelActions", "search"]]
+    ["wp_ajax_nopriv_search", ["\\lolitatheme\\ModelActions", "search"]],
+    ["wp_ajax_hire-us", ["\\lolitatheme\\ModelActions", "hireUs"]],
+    ["wp_ajax_nopriv_hire-us", ["\\lolitatheme\\ModelActions", "hireUs"]]
 ]
