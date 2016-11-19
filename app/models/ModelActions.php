@@ -55,6 +55,15 @@ class ModelActions
         wp_send_json_success(
             array(
                 get_option('admin_email'),
+                'HIRE US',
+                View::make(
+                    'mails' . DS . 'hire_us',
+                    array(
+                        'name'  => Arr::get($_POST, 'name'),
+                        'email' => Arr::get($_POST, 'email'),
+                        'msg'   => Arr::get($_POST, 'msg'),
+                    )
+                ),
                 wp_mail(
                     get_option('admin_email'),
                     'HIRE US',
