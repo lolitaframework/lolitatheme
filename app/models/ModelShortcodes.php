@@ -242,7 +242,7 @@ class ModelShortcodes
         return View::make(
             'blocks' . DS . 'b-latest-projects',
             array(
-                'items' => Posts::posts(
+                'items' => Post::posts(
                     array(
                         'posts_per_page'   => 9,
                         'offset'           => 0,
@@ -281,7 +281,7 @@ class ModelShortcodes
         return View::make(
             'blocks' . DS . 'b-products',
             array(
-                'items' => Posts::posts(
+                'items' => Post::posts(
                     array(
                         'posts_per_page'   => 3,
                         'offset'           => 0,
@@ -305,7 +305,7 @@ class ModelShortcodes
         return View::make(
             'blocks' . DS . 'b-stories',
             array(
-                'items' => Posts::posts(
+                'items' => Post::posts(
                     array(
                         'posts_per_page'   => -1,
                         'offset'           => 0,
