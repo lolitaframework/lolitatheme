@@ -14,6 +14,16 @@ use \WP_Term;
 class ModelPages
 {
     /**
+     * Showcase page
+     *
+     * @return string
+     */
+    public static function showcase()
+    {
+        return View::make('pages' . DS . 'showcase');
+    }
+
+    /**
      * Attachment page
      *
      * @return string
