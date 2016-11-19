@@ -239,7 +239,7 @@ class Post
      * @param  array  $args
      * @return array
      */
-    public static function posts((array) $args = array())
+    public static function posts(array $args = array())
     {
         return self::sanitize(get_posts($args));
     }
