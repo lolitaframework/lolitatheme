@@ -1,0 +1,43 @@
+{
+    "project" : {
+        "title" : "Additional options",
+        "screen" : "project",
+        "context" : "normal",
+        "controls" : [
+            {
+                "__TYPE__" : "Text",
+                "name" : "link",
+                "label" : "Link"
+            }
+        ]
+    },
+    "product" : {
+        "title" : "Additional options",
+        "screen" : "product",
+        "context" : "normal",
+        "controls" : [
+            {
+                "__TYPE__" : "Text",
+                "name" : "link",
+                "label" : "Link"
+            }
+        ]
+    },
+    "story" : {
+        "title" : "Additional options",
+        "screen" : "story",
+        "context" : "normal",
+        "controls" : [
+            {
+                "__TYPE__" : "Text",
+                "name" : "link",
+                "label" : "Link"
+            },
+            {
+                "__TYPE__" : "Text",
+                "name" : "position",
+                "label" : "Position"
+            }
+        ]
+    }
+}

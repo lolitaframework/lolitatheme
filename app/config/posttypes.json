@@ -1,7 +1,17 @@
 [
     {
-        "singular" : "Showcase",
-        "menu_icon" : "dashicons-book-alt",
+        "singular" : "Project",
+        "menu_icon" : "dashicons-heart",
+        "supports" : ["title", "thumbnail"]
+    },
+    {
+        "singular" : "Product",
+        "menu_icon" : "dashicons-cart",
+        "supports" : ["title", "editor", "thumbnail"]
+    },
+    {
+        "singular" : "Story",
+        "menu_icon" : "dashicons-universal-access",
         "supports" : ["title", "editor", "thumbnail"]
     }
 ]
