@@ -33,7 +33,7 @@ namespace LolitaFramework {
                 nonce: (<any>window).lolita_framework.LF_NONCE,
                 name: jQuery(e.currentTarget).find('[name=name]').val(),
                 email: jQuery(e.currentTarget).find('[name=email]').val(),
-                msg: jQuery(e.currentTarget).find('[name=msg]').val()
+                msg: jQuery(e.currentTarget).find('[name=message]').val()
             });
 
             promise.done((response:any) => this.searchDone(response));
