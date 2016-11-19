@@ -5,9 +5,9 @@
     <?php if (count($items)) : ?>
         <ul class="b-latest-projects__items">
         <?php foreach ($items as $p) : ?>
-            <li class="b-latest-projects__items__item" style="background-image: url('<?php echo $p->img()->src('340x260') ?>');">
+            <a class="b-latest-projects__items__item" href="<?php echo $p->project_link ?>" style="background-image: url('<?php echo $p->img()->src('340x260') ?>');" target="_blank">
                 <span class="b-latest-projects__items__item__name"><?php echo $p->project_link ?></span>
-            </li>
+            </a>
         <?php endforeach ?>
         </ul>
     <?php endif ?>

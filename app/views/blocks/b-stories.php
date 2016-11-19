@@ -3,14 +3,14 @@
     <h2 class="b-stories__title"><?php _e('Success stories', 'lolita') ?></h2>
     <p class="b-stories__desc"><?php _e('Stories of people inspired by Lolita inc. to change their life trough our products and services.', 'lolita') ?></p>
     <?php if (count($items)) : ?>
-        <div>
+        <div class="b-stories__frame">
             <ul class="b-stories__items">
             <?php foreach ($items as $p) : ?>
                 <li class="b-stories__items__item">
-                    <?php if ('' !== (string) $p->story_link) : ?>
-                        <a href="<?php echo $p->story_link ?>" class="b-stories__items__item__image" style="background-image: url('<?php echo $p->img()->src('100x100') ?>');"></a>
+                     <?php if ('' !== (string) $p->story_link) : ?>
+                        <a href="<?php echo $p->story_link ?>" class="b-stories__items__item__image" style="background-image: url('<?php echo $p->img()->src('100x100') ?>');" target="_blank"></a>
 
-                        <a href="<?php echo $p->story_link ?>" class="b-stories__items__item__name"><?php echo $p->title() ?></a>
+                        <a href="<?php echo $p->story_link ?>" class="b-stories__items__item__name" target="_blank"><?php echo $p->title() ?></a>
                     <?php else : ?>
                         <span class="b-stories__items__item__image" style="background-image: url('<?php echo $p->img()->src('100x100') ?>');"></span>
                         <span class="b-stories__items__item__name"><?php echo $p->title() ?></span>
