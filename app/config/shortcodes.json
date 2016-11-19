@@ -12,5 +12,7 @@
     "w-banner" : ["\\lolitatheme\\ModelShortcodes", "wBanner"],
     "b-pagination" : ["\\lolitatheme\\ModelShortcodes", "bPagination"],
     "b-latest-projects" : ["\\lolitatheme\\ModelShortcodes", "bLatestProjects"],
-    "b-services" : ["\\lolitatheme\\ModelShortcodes", "bServices"]
+    "b-services" : ["\\lolitatheme\\ModelShortcodes", "bServices"],
+    "b-products" : ["\\lolitatheme\\ModelShortcodes", "bProducts"],
+    "b-stories" : ["\\lolitatheme\\ModelShortcodes", "bStories"]
 }

@@ -11,6 +11,5 @@
         <?php endforeach ?>
         </ul>
     <?php endif ?>
-    <a href="#" class="b-latest-projects__items__load-more">load more</a>
 </div>
 <!-- /b-latest-projects -->

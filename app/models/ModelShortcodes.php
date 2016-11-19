@@ -271,4 +271,54 @@ class ModelShortcodes
             )
         );
     }
+
+    /**
+     * b-products
+     *
+     * @return mixed
+     */
+    public static function bProducts()
+    {
+        $args = array(
+            'posts_per_page'   => 3,
+            'offset'           => 0,
+            'orderby'          => 'date',
+            'order'            => 'DESC',
+            'post_type'        => 'products',
+            'post_status'      => 'publish',
+        );
+        $items = get_posts($args);
+        $items = Post::sanitize($items);
+        return View::make(
+            'blocks' . DS . 'b-products',
+            array(
+                'items' => $items,
+            )
+        );
+    }
+
+    /**
+     * b-stories
+     *
+     * @return mixed
+     */
+    public static function bStories()
+    {
+        $args = array(
+            'posts_per_page'   => 3,
+            'offset'           => 0,
+            'orderby'          => 'date',
+            'order'            => 'DESC',
+            'post_type'        => 'story',
+            'post_status'      => 'publish',
+        );
+        $items = get_posts($args);
+        $items = Post::sanitize($items);
+        return View::make(
+            'blocks' . DS . 'b-stories',
+            array(
+                'items' => $items,
+            )
+        );
+    }
 }
