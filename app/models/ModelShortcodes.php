@@ -2,6 +2,7 @@
 
 namespace lolitatheme;
 
+use \lolitatheme\LolitaFramework;
 use \lolitatheme\LolitaFramework\Core\View;
 use \lolitatheme\LolitaFramework\Core\Arr;
 use \lolitatheme\LolitaFramework\Core\Data;
@@ -229,5 +230,45 @@ class ModelShortcodes
             );
         }
         return '';
+    }
+
+    /**
+     * b-latest-projects
+     *
+     * @return mixed
+     */
+    public static function bLatestProjects()
+    {
+        $args = array(
+            'posts_per_page'   => 9,
+            'offset'           => 0,
+            'orderby'          => 'date',
+            'order'            => 'DESC',
+            'post_type'        => 'project',
+            'post_status'      => 'publish',
+        );
+        $items = get_posts($args);
+        $items = Post::sanitize($items);
+        return View::make(
+            'blocks' . DS . 'b-latest-projects',
+            array(
+                'items' => $items,
+            )
+        );
+    }
+
+    /**
+     * b-services
+     *
+     * @return mixed
+     */
+    public static function bServices()
+    {
+        return View::make(
+            'blocks' . DS . 'b-services',
+            array(
+                'assets' => LolitaFramework::baseUrl() . DS . 'app' . DS . 'assets',
+            )
+        );
     }
 }

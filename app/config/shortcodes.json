@@ -10,5 +10,7 @@
     "w-social-buttons" : ["\\lolitatheme\\ModelShortcodes", "wSocialButtons"],
     "w-follow" : ["\\lolitatheme\\ModelShortcodes", "wFollow"],
     "w-banner" : ["\\lolitatheme\\ModelShortcodes", "wBanner"],
-    "b-pagination" : ["\\lolitatheme\\ModelShortcodes", "bPagination"]
+    "b-pagination" : ["\\lolitatheme\\ModelShortcodes", "bPagination"],
+    "b-latest-projects" : ["\\lolitatheme\\ModelShortcodes", "bLatestProjects"],
+    "b-services" : ["\\lolitatheme\\ModelShortcodes", "bServices"]
 }

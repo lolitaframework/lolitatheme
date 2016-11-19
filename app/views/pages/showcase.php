@@ -11,72 +11,10 @@
         <div class="l-content">
             <div class="l-content__wrapper">
                 <div class="l-content__row l-content__row--showcase">
-                    <!-- b-latest-projects -->
-                    <div class="b-latest-projects">
-                        <h2 class="b-latest-projects__title">Latest Projects</h2>
-                        <p class="b-latest-projects__desc">We help clients across the world achieve success through high-quality, innovative &apm; creative design work.</p>
-                        <ul class="b-latest-projects__items">
-                            <li class="b-latest-projects__items__item" style="background-image: url('http://placehold.it/340x260');">
-                                <span class="b-latest-projects__items__item__name">www.somesite.com</span>
-                            </li>
-                            <li class="b-latest-projects__items__item" style="background-image: url('http://placehold.it/340x260');">
-                                <span class="b-latest-projects__items__item__name">www.somesite.com</span>
-                            </li>
-                            <li class="b-latest-projects__items__item" style="background-image: url('http://placehold.it/340x260');">
-                                <span class="b-latest-projects__items__item__name">www.somesite.com</span>
-                            </li>
-                            <li class="b-latest-projects__items__item" style="background-image: url('http://placehold.it/340x260');">
-                                <span class="b-latest-projects__items__item__name">www.somesite.com</span>
-                            </li>
-                            <li class="b-latest-projects__items__item" style="background-image: url('http://placehold.it/340x260');">
-                                <span class="b-latest-projects__items__item__name">www.somesite.com</span>
-                            </li>
-                            <li class="b-latest-projects__items__item" style="background-image: url('http://placehold.it/340x260');">
-                                <span class="b-latest-projects__items__item__name">www.somesite.com</span>
-                            </li>
-                            <li class="b-latest-projects__items__item" style="background-image: url('http://placehold.it/340x260');">
-                                <span class="b-latest-projects__items__item__name">www.somesite.com</span>
-                            </li>
-                            <li class="b-latest-projects__items__item" style="background-image: url('http://placehold.it/340x260');">
-                                <span class="b-latest-projects__items__item__name">www.somesite.com</span>
-                            </li>
-                            <li class="b-latest-projects__items__item" style="background-image: url('http://placehold.it/340x260');">
-                                <span class="b-latest-projects__items__item__name">www.somesite.com</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="b-latest-projects__items__load-more">load more</a>
-                    </div>
-                    <!-- /b-latest-projects -->
+                    <?php echo do_shortcode('[b-latest-projects]') ?>
                 </div>
                 <div class="l-content__row l-content__row--showcase l-content__row--color1">
-                    <!-- b-services -->
-                    <div class="b-services">
-                        <h2 class="b-services__title">Services we offer</h2>
-                        <p class="b-services__desc">We are the best WordPress developers in Eastern Europe. Your wildest WordPress desires is our daily job.</p>
-                        <ul class="b-services__items">
-                            <li class="b-services__items__item">
-                                <span class="b-services__items__item__image" style="background-image: url('./img/b-services--1.svg');"></span>
-                                <span class="b-services__items__item__name">Gorgeous Design</span>
-                            </li>
-                            <li class="b-services__items__item">
-                                <span class="b-services__items__item__image" style="background-image: url('./img/b-services--2.svg');"></span>
-                                <span class="b-services__items__item__name">Responsive Coding</span>
-                            </li>
-                            <li class="b-services__items__item">
-                                <span class="b-services__items__item__image" style="background-image: url('./img/b-services--3.svg');"></span>
-                                <span class="b-services__items__item__name">WordPress development</span>
-                            </li>
-                            <li class="b-services__items__item">
-                                <span class="b-services__items__item__image" style="background-image: url('./img/b-services--4.svg');"></span>
-                                <span class="b-services__items__item__name">Friendly support</span>
-                            </li>
-                            <li class="b-services__items__item">
-                                <span class="b-services__items__item__image" style="background-image: url('./img/b-services--5.svg');"></span>
-                                <span class="b-services__items__item__name">Free hosting for one year</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /b-services -->
+                    <?php echo do_shortcode('[b-services]') ?>
                 </div>
                 <div class="l-content__row l-content__row--showcase">
                     <!-- b-products -->
@@ -184,7 +122,7 @@
         <!-- l-footer -->
         <div class="l-footer">
             <div class="l-footer__row">
-                <?php //echo do_shortcode('[w-follow]') ?>
+                <?php echo do_shortcode('[w-follow]') ?>
             </div>
             <div class="l-footer__row">
                 <?php echo do_shortcode('[w-social-buttons]') ?>
