@@ -305,7 +305,7 @@ class ModelShortcodes
     public static function bStories()
     {
         $args = array(
-            'posts_per_page'   => 3,
+            'posts_per_page'   => -1,
             'offset'           => 0,
             'orderby'          => 'date',
             'order'            => 'DESC',
