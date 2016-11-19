@@ -4,7 +4,7 @@
         <ul class="w-social-buttons__items">
         <?php foreach ($icons as $icon) : ?>
             <li class="w-social-buttons__item">
-                <a href="<?php echo $icon['url'] ?>" class="w-social-buttons__link">
+                <a href="<?php echo $icon['url'] ?>" class="w-social-buttons__link" target="_blank">
                     <i class="w-social-buttons__link__icon <?php echo $icon['icon_css'] ?>"></i>
                 </a>
             </li>
