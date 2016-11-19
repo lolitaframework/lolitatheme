@@ -239,20 +239,19 @@ class ModelShortcodes
      */
     public static function bLatestProjects()
     {
-        $args = array(
-            'posts_per_page'   => 9,
-            'offset'           => 0,
-            'orderby'          => 'date',
-            'order'            => 'DESC',
-            'post_type'        => 'project',
-            'post_status'      => 'publish',
-        );
-        $items = get_posts($args);
-        $items = Post::sanitize($items);
         return View::make(
             'blocks' . DS . 'b-latest-projects',
             array(
-                'items' => $items,
+                'items' => Posts::posts(
+                    array(
+                        'posts_per_page'   => 9,
+                        'offset'           => 0,
+                        'orderby'          => 'date',
+                        'order'            => 'DESC',
+                        'post_type'        => 'project',
+                        'post_status'      => 'publish',
+                    )
+                ),
             )
         );
     }
@@ -279,20 +278,19 @@ class ModelShortcodes
      */
     public static function bProducts()
     {
-        $args = array(
-            'posts_per_page'   => 3,
-            'offset'           => 0,
-            'orderby'          => 'date',
-            'order'            => 'DESC',
-            'post_type'        => 'product',
-            'post_status'      => 'publish',
-        );
-        $items = get_posts($args);
-        $items = Post::sanitize($items);
         return View::make(
             'blocks' . DS . 'b-products',
             array(
-                'items' => $items,
+                'items' => Posts::posts(
+                    array(
+                        'posts_per_page'   => 3,
+                        'offset'           => 0,
+                        'orderby'          => 'date',
+                        'order'            => 'DESC',
+                        'post_type'        => 'product',
+                        'post_status'      => 'publish',
+                    )
+                ),
             )
         );
     }
@@ -304,20 +302,19 @@ class ModelShortcodes
      */
     public static function bStories()
     {
-        $args = array(
-            'posts_per_page'   => -1,
-            'offset'           => 0,
-            'orderby'          => 'date',
-            'order'            => 'DESC',
-            'post_type'        => 'story',
-            'post_status'      => 'publish',
-        );
-        $items = get_posts($args);
-        $items = Post::sanitize($items);
         return View::make(
             'blocks' . DS . 'b-stories',
             array(
-                'items' => $items,
+                'items' => Posts::posts(
+                    array(
+                        'posts_per_page'   => -1,
+                        'offset'           => 0,
+                        'orderby'          => 'date',
+                        'order'            => 'DESC',
+                        'post_type'        => 'story',
+                        'post_status'      => 'publish',
+                    )
+                ),
             )
         );
     }
