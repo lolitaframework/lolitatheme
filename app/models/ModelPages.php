@@ -14,6 +14,16 @@ use \WP_Term;
 class ModelPages
 {
     /**
+     * Hire use
+     *
+     * @return string
+     */
+    public static function hireUs()
+    {
+        return View::make('pages' . DS . 'hire_us');
+    }
+
+    /**
      * Showcase page
      *
      * @return string

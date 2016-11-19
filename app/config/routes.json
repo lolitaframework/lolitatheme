@@ -3,6 +3,10 @@
         "template_name" : "Showcase",
         "html" : "{{ \\lolitatheme\\ModelPages::showcase }}"
     },
+    "hire-us_template" : {
+        "template_name" : "Hire us",
+        "html" : "{{ \\lolitatheme\\ModelPages::hireUs }}"
+    },
     "search" : "{{ \\lolitatheme\\ModelPages::search }}",
     "archive" : "{{ \\lolitatheme\\ModelPages::archive }}",
     "attachment" : "{{ \\lolitatheme\\ModelPages::attachment }}",

@@ -6,7 +6,7 @@
             <div class="b-404">
                 <h1 class="b-404__title"><?php _e('404', 'lolita') ?></h1>
                 <h3  class="b-404__subtitle"><?php _e('Woops! Page not found!', 'lolita') ?></h3>
-                <a href="#" class="b-404__close"><?php _e('Close', 'lolita') ?></a>
+                <a href="<?php echo home_url() ?>" class="b-404__close"><?php _e('Close', 'lolita') ?></a>
             </div>
             <!-- /b-attachment -->
         </div>
