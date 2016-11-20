@@ -17,7 +17,8 @@
         ["search", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/search.min.js", ["jquery", "wp-util"], "1.0", true],
         ["smart_banner_image", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/smart_banner_image.js", ["jquery", "wp-util"], "1.0", true],
         ["prettify", "https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js", ["jquery", "wp-util"], "1.0", true],
-        ["hire-us", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/hire_us.js", ["jquery"], "1.0", true]
+        ["hire-us", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/hire_us.js", ["jquery"], "1.0", true],
+        ["trello", "https://api.trello.com/1/client.js?key=cfd9600cf793f82b8852bba498e1853e&token=a5569abd155e6aa2ead6778c91eb6df1e6d1c8bdf3b5b43c0c9ec74bfaca128e", ["jquery"], "1.0", true]
     ],
     "async_styles": [
         ["opensans", "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i", [], "1.0", "all"],
