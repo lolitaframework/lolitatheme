@@ -1,49 +1,32 @@
-/// <reference path="jquery.d.ts" />
 var LolitaFramework;
-(function (LolitaFramework) {
-    var HomeSearch = (function () {
-        /**
-         * Constructor
-         */
+(function(LolitaFramework) {
+    var HomeSearch = (function() {
         function HomeSearch() {
             var _this = this;
-            /**
-             * Ajax helper
-             * @type {any}
-             */
             this.ajax = null;
-            /**
-             * Timeout handler
-             * @type {any}
-             */
             this.handler = null;
-            /**
-             * Search item template
-             * @type {any}
-             */
             this.tmpl = null;
             this.ajax = window.wp.ajax;
             this.tmpl = window.wp.template('search-item');
-            jQuery(document).on('keyup', '.b-search-form__input', function (e) { return _this.searchInputKeyup(e); });
+            jQuery(document).on('keyup', '.b-search-form__input', function(e) {
+                return _this.searchInputKeyup(e);
+            });
         }
-        /**
-         * Search input keyup event
-         */
-        HomeSearch.prototype.searchInputKeyup = function (e) {
+        HomeSearch.prototype.searchInputKeyup = function(e) {
             var _this = this;
             var value;
+            if (e.which == 38 || e.which == 40) {
+                return;
+            }
             value = jQuery(e.currentTarget).val();
             if (this.handler) {
                 clearTimeout(this.handler);
             }
-            this.handler = setTimeout(function () { return _this.search(value); }, 200);
+            this.handler = setTimeout(function() {
+                return _this.search(value);
+            }, 200);
         };
-        /**
-         * Search
-         *
-         * @param {string} value
-         */
-        HomeSearch.prototype.search = function (value) {
+        HomeSearch.prototype.search = function(value) {
             var _this = this;
             var promise;
             promise = this.ajax.post({
@@ -51,14 +34,11 @@ var LolitaFramework;
                 nonce: window.lolita_framework.LF_NONCE,
                 s: value
             });
-            promise.done(function (response) { return _this.searchDone(response, value); });
+            promise.done(function(response) {
+                return _this.searchDone(response, value);
+            });
         };
-        /**
-         * Ajax promise done
-         *
-         * @param {any} response
-         */
-        HomeSearch.prototype.searchDone = function (response, value) {
+        HomeSearch.prototype.searchDone = function(response, value) {
             var i, el;
             jQuery('.w-search-block__results').empty();
             if (response.items.length) {
@@ -75,3 +55,4 @@ var LolitaFramework;
     LolitaFramework.HomeSearch = HomeSearch;
     window.LolitaFramework.home_search = new HomeSearch();
 })(LolitaFramework || (LolitaFramework = {}));
+//# sourceMappingURL=search.js.map

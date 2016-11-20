@@ -62,10 +62,12 @@ function prevItem() {
 }
 
 // bind hover
-$w_search_block__results.on('mouseover', '.w-search-block__item', function() {
+$w_search_block__results.on('mouseenter', '.w-search-block__item', function() {
+    $w_search_block__items = $w_search_block.find('.w-search-block__item');
     $w_search_block__items.removeClass('w-search-block__item--active');
-    $(this).addClass('w-search-block__item--active');
+    jQuery(this).addClass('w-search-block__item--active');
 });
+
 
 // arrows binding
 jQuery(document).keydown(function(e) {

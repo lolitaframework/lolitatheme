@@ -40,6 +40,10 @@ namespace LolitaFramework {
         searchInputKeyup(e:any) {
             var value:string;
 
+            if (e.which == 38 || e.which == 40) {
+                return;
+            }
+
             value   = jQuery(e.currentTarget).val();
             if(this.handler) {
                 clearTimeout(this.handler);
