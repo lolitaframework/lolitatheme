@@ -1,5 +1,6 @@
 [
-	["init", ["\\lolitatheme\\ModelActions", "checkBrowser"]],
+    ["init", ["\\lolitatheme\\ModelActions", "checkBrowser"]],
+    ["init", ["\\lolitatheme\\ModelActions", "blockWPAdmin"]],
     ["wp_ajax_search", ["\\lolitatheme\\ModelActions", "search"]],
     ["wp_ajax_nopriv_search", ["\\lolitatheme\\ModelActions", "search"]],
     ["wp_ajax_hire-us", ["\\lolitatheme\\ModelActions", "hireUs"]],

@@ -6,6 +6,7 @@ use \lolitatheme\LolitaFramework\Core\View;
 use \lolitatheme\LolitaFramework\Core\Arr;
 use \lolitatheme\LolitaFramework\Core\Str;
 use \lolitatheme\LolitaFramework\Core\Loc;
+use \lolitatheme\LolitaFramework\Core\Url;
 use \lolitatheme\LolitaFramework\Core\Decorators\Post;
 
 class ModelActions
@@ -111,5 +112,20 @@ class ModelActions
                 )
             )
         );
+    }
+
+    /**
+     * Block wp-admin
+     *
+     * @return void
+     */
+    public static function blockWPAdmin()
+    {
+        $route = Url::route();
+        $route = str_replace('/', '', $route);
+        if ('wp-admin' === $route) {
+            wp_redirect(home_url());
+            die();
+        }
     }
 }
