@@ -13,5 +13,10 @@
         "singular" : "Story",
         "menu_icon" : "dashicons-universal-access",
         "supports" : ["title", "editor", "thumbnail"]
+    },
+    {
+        "singular" : "Feature",
+        "menu_icon" : "dashicons-star-filled",
+        "supports" : ["title", "editor", "thumbnail"]
     }
 ]

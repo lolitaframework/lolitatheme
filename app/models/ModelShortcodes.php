@@ -318,4 +318,28 @@ class ModelShortcodes
             )
         );
     }
+
+    /**
+     * b-features
+     *
+     * @return mixed
+     */
+    public static function bFeatures()
+    {
+        return View::make(
+            'blocks' . DS . 'b-features',
+            array(
+                'items' => Post::posts(
+                    array(
+                        'posts_per_page'   => 3,
+                        'offset'           => 0,
+                        'orderby'          => 'date',
+                        'order'            => 'DESC',
+                        'post_type'        => 'feature',
+                        'post_status'      => 'publish',
+                    )
+                ),
+            )
+        );
+    }
 }

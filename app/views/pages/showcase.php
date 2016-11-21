@@ -11,6 +11,9 @@
         <div class="l-content">
             <div class="l-content__wrapper">
                 <div class="l-content__row l-content__row--showcase">
+                    <?php echo do_shortcode('[b-features]') ?>
+                </div>
+                <div class="l-content__row l-content__row--showcase">
                     <?php echo do_shortcode('[b-latest-projects]') ?>
                 </div>
                 <div class="l-content__row l-content__row--showcase l-content__row--color1">

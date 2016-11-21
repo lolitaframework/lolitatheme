@@ -39,5 +39,22 @@
                 "label" : "Position"
             }
         ]
+    },
+    "feature" : {
+        "title" : "Additional options",
+        "screen" : "feature",
+        "context" : "normal",
+        "controls" : [
+            {
+                "__TYPE__" : "Text",
+                "name" : "link",
+                "label" : "Link"
+            },
+            {
+                "__TYPE__" : "Text",
+                "name" : "price",
+                "label" : "Price"
+            }
+        ]
     }
 }

@@ -14,5 +14,6 @@
     "b-latest-projects" : ["\\lolitatheme\\ModelShortcodes", "bLatestProjects"],
     "b-services" : ["\\lolitatheme\\ModelShortcodes", "bServices"],
     "b-products" : ["\\lolitatheme\\ModelShortcodes", "bProducts"],
-    "b-stories" : ["\\lolitatheme\\ModelShortcodes", "bStories"]
+    "b-stories" : ["\\lolitatheme\\ModelShortcodes", "bStories"],
+    "b-features" : ["\\lolitatheme\\ModelShortcodes", "bFeatures"]
 }
