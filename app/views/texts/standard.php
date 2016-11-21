@@ -1,0 +1,1 @@
+If you want us to make the perfect blog, personal or company website, please send message with short information about the project and we will get in touch with you shortly. Or as option you can call us ;)

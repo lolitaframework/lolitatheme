@@ -30,7 +30,17 @@ class ModelPages
      */
     public static function hireUs()
     {
-        return View::make('pages' . DS . 'hire_us');
+        $allowed = array('standard', 'premium', 'luxury');
+        $text    = Arr::get($_GET, 'type');
+        if (in_array($text, $allowed)) {
+            $text = View::make('texts' . DS . $text);
+        }
+        return View::make(
+            'pages' . DS . 'hire_us',
+            array(
+                'text' => $text,
+            )
+        );
     }
 
     /**
