@@ -12,7 +12,7 @@
         ["multilevel_menu", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/multilevel_menu.min.js", ["jquery"], "1.0", true],
         ["w-menu", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-menu.js", ["jquery"], "1.0", true],
         ["w-logo", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-logo.js", ["jquery"], "1.0", true],
-        ["w-follow", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-follow.js", ["jquery"], "1.0", true],
+        ["w-folow", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-folow.js", ["jquery"], "1.0", true],
         ["w-search-block", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/w-search-block.js", ["jquery"], "1.0", true],
         ["main", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/main.js", ["jquery"], "1.0", true],
         ["search", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/search.min.js", ["jquery", "wp-util"], "1.0", true],
