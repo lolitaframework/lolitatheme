@@ -25,62 +25,64 @@
     <!-- /l-header -->
     <!-- l-content -->
     <div class="l-content">
-        <div class="l-content__row">
-            <!-- b-article -->
-            <div class="b-article">
-                <header class="b-article__header">
-                    <div class="b-article__header__categories">
-                        <?php if (is_array($p->categories) && count($p->categories)) : ?>
-                            <!-- b-categories -->
-                            <div class="b-categories">
+        <div class="l-content__wrapper">
+            <div class="l-content__row">
+                <!-- b-article -->
+                <div class="b-article">
+                    <header class="b-article__header">
+                        <div class="b-article__header__categories">
+                            <?php if (is_array($p->categories) && count($p->categories)) : ?>
+                                <!-- b-categories -->
+                                <div class="b-categories">
+                                    <nav>
+                                        <ul class="b-categories__list">
+                                            <?php foreach ($p->categories as $cat) : ?>
+                                                <li class="b-categories__list__item">
+                                                    <a class="b-categories__list__item__link" href="<?php echo $cat->link() ?>"><?php echo $cat->name ?></a>
+                                                </li>
+                                            <?php endforeach ?>
+                                         </ul>
+                                    </nav>
+                                </div>
+                                <!-- /b-categories -->
+                            <?php endif ?>
+                        </div>
+                        <h1 class="b-article__header__title"><?php echo $p->title() ?></h1>
+                        <div class="b-article__header__meta">
+                            Posted on <?php echo $p->date() ?>
+                        </div>
+                    </header>
+                    <div class="b-article__content">
+                        <div class="b-text">
+                            <?php echo $p->content() ?>
+                        </div>
+                    </div>
+                    <footer class="b-article__footer">
+                        <?php if (is_array($p->tags) && count($p->tags)) : ?>
+                            <!-- b-tags -->
+                            <div class="b-tags">
                                 <nav>
-                                    <ul class="b-categories__list">
-                                        <?php foreach ($p->categories as $cat) : ?>
-                                            <li class="b-categories__list__item">
-                                                <a class="b-categories__list__item__link" href="<?php echo $cat->link() ?>"><?php echo $cat->name ?></a>
-                                            </li>
-                                        <?php endforeach ?>
-                                     </ul>
+                                    <ul class="b-tags__list">
+                                    <?php foreach ($p->tags as $tag) : ?>
+                                        <li class="b-tags__list__item">
+                                            <a class="b-tags__list__item__link" href="<?php echo $tag->link() ?>"><?php echo $tag->name ?></a>
+                                        </li>
+                                    <?php endforeach ?>
+                                    </ul>
                                 </nav>
                             </div>
-                            <!-- /b-categories -->
+                            <!-- /b-tags -->
                         <?php endif ?>
-                    </div>
-                    <h1 class="b-article__header__title"><?php echo $p->title() ?></h1>
-                    <div class="b-article__header__meta">
-                        Posted on <?php echo $p->date() ?>
-                    </div>
-                </header>
-                <div class="b-article__content">
-                    <div class="b-text">
-                        <?php echo $p->content() ?>
-                    </div>
+                    </footer>
                 </div>
-                <footer class="b-article__footer">
-                    <?php if (is_array($p->tags) && count($p->tags)) : ?>
-                        <!-- b-tags -->
-                        <div class="b-tags">
-                            <nav>
-                                <ul class="b-tags__list">
-                                <?php foreach ($p->tags as $tag) : ?>
-                                    <li class="b-tags__list__item">
-                                        <a class="b-tags__list__item__link" href="<?php echo $tag->link() ?>"><?php echo $tag->name ?></a>
-                                    </li>
-                                <?php endforeach ?>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- /b-tags -->
-                    <?php endif ?>
-                </footer>
+                <!-- /b-article -->
             </div>
-            <!-- /b-article -->
-        </div>
-        <div class="l-content__row">
-            <?php echo do_shortcode('[b-might-like p="' . $p->ID . '"]') ?>
-        </div>
-        <div class="l-content__row">
-            <?php echo do_shortcode('[lolita-comments_sc]') ?>
+            <div class="l-content__row">
+                <?php echo do_shortcode('[b-might-like p="' . $p->ID . '"]') ?>
+            </div>
+            <div class="l-content__row">
+                <?php echo do_shortcode('[lolita-comments_sc]') ?>
+            </div>
         </div>
     </div>
     <!-- /l-content -->
