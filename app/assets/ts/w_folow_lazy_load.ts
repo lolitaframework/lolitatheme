@@ -64,7 +64,6 @@ namespace LolitaFramework {
                     jQuery('.w-folow__items').append(this.tmpl(el));
                 }
             }
-            this.scroll();
         }
 
         /**
