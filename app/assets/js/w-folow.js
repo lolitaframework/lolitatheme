@@ -16,5 +16,10 @@ if (jQuery(window).width() > 767) {
         dragHandle: 1,
         dynamicHandle: 1
     });
+}
 
+
+document.getElementById('blocks.common-css').onload = function(){
+    if(this.media != 'all') this.media='all';
+    $w_folow_frame.sly('reload');
 }
