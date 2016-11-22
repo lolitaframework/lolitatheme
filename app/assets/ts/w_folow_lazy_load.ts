@@ -64,6 +64,10 @@ namespace LolitaFramework {
                     jQuery('.w-folow__items').append(this.tmpl(el));
                 }
             }
+            if(!jQuery('.w-folow').is(':visible')) {
+                jQuery('.w-folow').slideDown();
+                jQuery('.w-folow .w-folow__frame').sly('reload');
+            }
         }
 
         /**
@@ -82,9 +86,6 @@ namespace LolitaFramework {
             if(this.isIntoView(obj)) {
                 jQuery(obj).attr('src', jQuery(obj).data('src'));
                 jQuery('.w-folow .w-folow__frame').sly('reload');
-                if(!jQuery('.w-folow').is(':visible')) {
-                    jQuery('.w-folow').slideDown();
-                }
             }
         }
 
