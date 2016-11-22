@@ -7,16 +7,15 @@ namespace LolitaFramework {
          * Constructor
          */
         constructor() {
-            setTimeout(
-                function() {
+            (function(w, me){
+                setTimeout(function(){
                     jQuery(document).on(
                         'scroll',
-                        window,
-                        () => this.scroll()
+                        w,
+                        () => me.scroll()
                     );
-                },
-                1000
-            );
+                });
+            })(window, this);
         }
 
         /**

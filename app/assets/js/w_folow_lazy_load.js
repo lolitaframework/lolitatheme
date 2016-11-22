@@ -6,8 +6,11 @@ var LolitaFramework;
          * Constructor
          */
         function WFolowLazyLoad() {
-            var _this = this;
-            jQuery(document).on('scroll', window, function () { return _this.scroll(); });
+            (function (w, me) {
+                setTimeout(function () {
+                    jQuery(document).on('scroll', w, function () { return me.scroll(); });
+                });
+            })(window, this);
         }
         /**
          * Scroll event
