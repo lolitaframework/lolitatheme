@@ -6,12 +6,49 @@ var LolitaFramework;
          * Constructor
          */
         function WFolowLazyLoad() {
-            (function (w, me) {
-                setTimeout(function () {
-                    jQuery(document).on('scroll', w, function () { return me.scroll(); });
-                });
-            })(window, this);
+            var _this = this;
+            /**
+             * Ajax helper
+             * @type {any}
+             */
+            this.ajax = null;
+            /**
+             * Item template
+             * @type {any}
+             */
+            this.tmpl = null;
+            this.ajax = window.wp.ajax;
+            this.tmpl = window.wp.template('insta-item');
+            jQuery(document).on('scroll', window, function () { return _this.scroll(); });
+            this.items();
         }
+        /**
+         * Items
+         */
+        WFolowLazyLoad.prototype.items = function () {
+            var _this = this;
+            var promise;
+            promise = this.ajax.post({
+                action: 'instagram',
+                nonce: window.lolita_framework.LF_NONCE
+            });
+            promise.done(function (response) { return _this.fill(response); });
+        };
+        /**
+         * Ajax promise done
+         *
+         * @param {any} response
+         */
+        WFolowLazyLoad.prototype.fill = function (response) {
+            var i, el;
+            if (response.items.length) {
+                for (i = 0; i < response.items.length; i++) {
+                    el = response.items[i];
+                    jQuery('.w-folow__items').append(this.tmpl(el));
+                }
+            }
+            this.scroll();
+        };
         /**
          * Scroll event
          */
@@ -27,6 +64,10 @@ var LolitaFramework;
         WFolowLazyLoad.prototype.update = function (index, obj) {
             if (this.isIntoView(obj)) {
                 jQuery(obj).attr('src', jQuery(obj).data('src'));
+                jQuery('.w-folow .w-folow__frame').sly('reload');
+                if (!jQuery('.w-folow').is(':visible')) {
+                    jQuery('.w-folow').slideDown();
+                }
             }
         };
         /**

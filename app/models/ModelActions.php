@@ -7,6 +7,7 @@ use \lolitatheme\LolitaFramework\Core\Arr;
 use \lolitatheme\LolitaFramework\Core\Str;
 use \lolitatheme\LolitaFramework\Core\Loc;
 use \lolitatheme\LolitaFramework\Core\Url;
+use \lolitatheme\LolitaFramework\Core\Data;
 use \lolitatheme\LolitaFramework\Core\Decorators\Post;
 
 class ModelActions
@@ -76,12 +77,23 @@ class ModelActions
         check_ajax_referer('Lolita Framework', 'nonce');
         $transient_key = 'cache-w-follow';
         $items         = get_transient($transient_key);
+        $items = false;
+        $placeholder   = LolitaFramework::baseUrl() . DS . 'app' . DS . 'assets' . DS . 'img' . DS . 'insta_placeholder.min.svg';
 
         if (false === $items) {
             $url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=3494283511.3a81a9f.ca5fb9bd44df4ad69768c44a8947c3e5&COUNT=20';
             $items = wp_remote_retrieve_body(wp_remote_get($url));
             $items = Data::maybeJSONDecode($items);
-            if ($items) {
+            $items = Arr::get($items, 'data', array());
+            if (count($items) && is_array($items)) {
+                foreach ($items as &$el) {
+                    $el = array(
+                        'link'        => $el['link'],
+                        'placeholder' => $placeholder,
+                        'src'         => $el['images']['standard_resolution']['url'],
+                        'text'        => $el['caption']['text'],
+                    );
+                }
                 set_transient($transient_key, $items, HOUR_IN_SECONDS);
             }
         }
