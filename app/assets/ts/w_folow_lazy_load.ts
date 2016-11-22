@@ -23,7 +23,7 @@ namespace LolitaFramework {
             this.tmpl = (<any>window).wp.template('insta-item');
 
             setTimeout(
-                () => this.start,
+                () => this.start(),
                 1000
             );
         }

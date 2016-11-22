@@ -19,9 +19,13 @@ var LolitaFramework;
             this.tmpl = null;
             this.ajax = window.wp.ajax;
             this.tmpl = window.wp.template('insta-item');
+            setTimeout(function () { return _this.start(); }, 1000);
+        }
+        WFolowLazyLoad.prototype.start = function () {
+            var _this = this;
             jQuery(document).on('scroll', window, function () { return _this.scroll(); });
             this.items();
-        }
+        };
         /**
          * Items
          */
