@@ -174,7 +174,8 @@ class ModelShortcodes
         return View::make(
             'blocks' . DS . 'w-follow',
             array(
-                'items' => $items
+                'items' => $items,
+                'placeholder' => LolitaFramework::baseUrl() . DS . 'app' . DS . 'assets' . DS . 'img' . DS . 'insta_placeholder.min.svg'
             )
         );
     }

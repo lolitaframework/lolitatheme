@@ -7,7 +7,7 @@
                 <?php foreach ($items['data'] as $i) : ?>
                     <li class="w-folow__item">
                         <a href="<?php echo $i['link'] ?>" class="w-folow__item__link">
-                            <img class="w-folow__item__image" src="<?php echo $i['images']['standard_resolution']['url'] ?>" alt="<?php echo esc_attr($i['caption']['text']) ?>">
+                            <img class="w-folow__item__image" src="<?php echo $placeholder ?>" data-src="<?php echo $i['images']['standard_resolution']['url'] ?>" alt="<?php echo esc_attr($i['caption']['text']) ?>">
                             <div class="w-folow__item__desc"><?php echo $i['caption']['text'] ?></div>
                         </a>
                     </li>
