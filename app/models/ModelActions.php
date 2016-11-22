@@ -128,4 +128,28 @@ class ModelActions
             die();
         }
     }
+
+    /**
+     * Print emoji detection script
+     *
+     * @return void
+     */
+    public static function printEmojiDetectionScript()
+    {
+        echo View::make(
+            'scripts' . DS . 'emoji_detection_script',
+            array(
+                'settings' => array(
+                    'baseUrl' => apply_filters('emoji_url', 'https://s.w.org/images/core/emoji/2/72x72/'),
+                    'ext'     => apply_filters('emoji_ext', '.png'),
+                    'svgUrl'  => apply_filters('emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/'),
+                    'svgExt'  => apply_filters('emoji_svg_ext', '.svg'),
+                    'source'  => array(
+                        'wpemoji' => apply_filters('script_loader_src', includes_url('js/wp-emoji.js'), 'wpemoji'),
+                        'twemoji' => apply_filters('script_loader_src', includes_url('js/twemoji.js'), 'twemoji'),
+                    ),
+                ),
+            )
+        );
+    }
 }
