@@ -50,7 +50,7 @@
                         <div class="b-post-preview__content">
                             <h3 class="b-post-preview__content__title"><a href="<?php echo $p->link() ?>" class="b-post-preview__content__title__link"><?php echo $p->title() ?></a></h3>
                             <div class="b-post-preview__content__excerpt">
-                                <?php
+                               <?php
                                $content = preg_replace('/<pre class="prettyprint.*/s', '', $p->post_content);
                                $content = str_replace('<h2>Example usage</h2>', '', $content);
                                echo $content;
