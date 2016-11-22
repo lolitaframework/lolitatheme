@@ -163,7 +163,6 @@ class ModelShortcodes
     {
         $transient_key = 'cache-w-follow';
         $items         = get_transient($transient_key);
-        $items = false;
 
         if (false === $items) {
             $url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=3494283511.3a81a9f.ca5fb9bd44df4ad69768c44a8947c3e5&COUNT=20';

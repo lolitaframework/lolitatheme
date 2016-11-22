@@ -66,6 +66,29 @@ class ModelActions
     }
 
     /**
+     * Instagram
+     * Action: wp_ajax_instagra, wp_ajax_nopriv_instagra
+     *
+     * @return string
+     */
+    public static function instagram()
+    {
+        check_ajax_referer('Lolita Framework', 'nonce');
+        $transient_key = 'cache-w-follow';
+        $items         = get_transient($transient_key);
+
+        if (false === $items) {
+            $url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=3494283511.3a81a9f.ca5fb9bd44df4ad69768c44a8947c3e5&COUNT=20';
+            $items = wp_remote_retrieve_body(wp_remote_get($url));
+            $items = Data::maybeJSONDecode($items);
+            if ($items) {
+                set_transient($transient_key, $items, HOUR_IN_SECONDS);
+            }
+        }
+        wp_send_json_success(array('items' => $items));
+    }
+
+    /**
      * Hire use
      *
      * @return void
