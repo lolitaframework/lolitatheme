@@ -14,6 +14,7 @@ namespace LolitaFramework {
                         w,
                         () => me.scroll()
                     );
+                    me.scroll()
                 });
             })(window, this);
         }
