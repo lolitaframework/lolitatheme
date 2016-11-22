@@ -9,15 +9,15 @@ class ModelFilters
 {
     public static function loadDirectly($tag, $handle, $href, $media)
     {
-        $file = Url::toFileSystem($href);
-        if(is_file($file)) {
-            return View::make(
-                'styles' . DS . 'base',
-                array(
-                    'file' => $file,
-                )
-            );
-        }
+        // $file = Url::toFileSystem($href);
+        // if(is_file($file)) {
+        //     return View::make(
+        //         'styles' . DS . 'base',
+        //         array(
+        //             'file' => $file,
+        //         )
+        //     );
+        // }
         return $tag;
     }
 }
