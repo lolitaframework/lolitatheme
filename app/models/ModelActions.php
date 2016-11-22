@@ -145,8 +145,8 @@ class ModelActions
                     'svgUrl'  => apply_filters('emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/'),
                     'svgExt'  => apply_filters('emoji_svg_ext', '.svg'),
                     'source'  => array(
-                        'wpemoji' => apply_filters('script_loader_src', includes_url('js/wp-emoji.js'), 'wpemoji'),
-                        'twemoji' => apply_filters('script_loader_src', includes_url('js/twemoji.js'), 'twemoji'),
+                        'wpemoji' => apply_filters('script_loader_src', includes_url('js/wp-emoji.min.js'), 'wpemoji'),
+                        'twemoji' => apply_filters('script_loader_src', includes_url('js/twemoji.min.js'), 'twemoji'),
                     ),
                 ),
             )
