@@ -6,5 +6,6 @@
     ["wp_ajax_hire-us", ["\\lolitatheme\\ModelActions", "hireUs"]],
     ["wp_ajax_nopriv_hire-us", ["\\lolitatheme\\ModelActions", "hireUs"]],
     ["wp_ajax_instagram", ["\\lolitatheme\\ModelActions", "instagram"]],
-    ["wp_ajax_nopriv_instagram", ["\\lolitatheme\\ModelActions", "instagram"]]
+    ["wp_ajax_nopriv_instagram", ["\\lolitatheme\\ModelActions", "instagram"]],
+    ["wp_footer", ["\\lolitatheme\\ModelActions", "printEmojiDetectionScript"], 7]
 ]
