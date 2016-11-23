@@ -6,7 +6,7 @@
     <?php endif ?>
     <ul class="<?php echo $ul_class ?>">
         <?php foreach ($comments as $comment) : ?>
-            <li class="b-comments__item">
+            <li id="comment-<?php echo $comment->comment_ID ?>" class="b-comments__item">
                 <div class="b-comments__item__comment">
                     <?php
                     echo $comment->avatar(
