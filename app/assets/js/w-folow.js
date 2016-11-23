@@ -16,4 +16,5 @@ if (jQuery(window).width() > 767) {
         dragHandle: 1,
         dynamicHandle: 1
     });
+
 }
