@@ -22,10 +22,10 @@ namespace LolitaFramework {
             this.ajax = (<any>window).wp.ajax;
             this.tmpl = (<any>window).wp.template('insta-item');
 
-            setTimeout(
-                () => this.start(),
-                1000
-            );
+            // setTimeout(
+            //     () => this.start(),
+            //     1000
+            // );
         }
 
         start() {

@@ -11,12 +11,14 @@ class ModelFilters
     {
         // $file = Url::toFileSystem($href);
         // if(is_file($file)) {
-        //     return View::make(
+        //     $style = View::make(
         //         'styles' . DS . 'base',
         //         array(
         //             'file' => $file,
         //         )
         //     );
+        //     $style = str_replace('url(', 'url(' . Url::toUrl(dirname($file)) . DS, $style);
+        //     return $style;
         // }
         return $tag;
     }
