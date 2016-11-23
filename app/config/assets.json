@@ -3,7 +3,8 @@
         "jquery"
     ],
     "scripts": [
-        ["jquery", "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js", [], "1.12.4", true],
+        ["jquery", "/wp-includes/js/jquery/jquery.js", [], "1.12.4", true],
+        ["jquery-migrate", "/wp-includes/js/jquery/jquery-migrate$suffix.js", [], "1.4.1", true],
         ["wp-util"],
         ["cookie", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/jquery.cookie.js", ["jquery"], "1.0", true],
         ["jquery.sly.min", "{{ \\lolitatheme\\LolitaFramework::baseUrl }}/app/assets/js/jquery.sly.min.js", ["jquery"], "1.0", true],
