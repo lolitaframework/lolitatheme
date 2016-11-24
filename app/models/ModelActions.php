@@ -9,9 +9,31 @@ use \lolitatheme\LolitaFramework\Core\Loc;
 use \lolitatheme\LolitaFramework\Core\Url;
 use \lolitatheme\LolitaFramework\Core\Data;
 use \lolitatheme\LolitaFramework\Core\Decorators\Post;
+use \WP_Post;
 
 class ModelActions
 {
+    /**
+     * Add meta to head
+     *
+     * @return void
+     */
+    public static function meta()
+    {
+        $qo = get_queried_object();
+        if ($qo instanceof WP_Post) {
+            $description = Str::limit(esc_attr(strip_tags($qo->post_content)), 200, '');
+        } else {
+            $description = sprintf('%s - %s', get_bloginfo('name'), get_bloginfo('description'));
+        }
+        echo View::make(
+            'blocks' . DS . 'meta',
+            array(
+                'description' => $description,
+            )
+        );
+    }
+
     /**
      * Filter old browsers
      *
