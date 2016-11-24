@@ -6,6 +6,7 @@ var LolitaFramework;
          * Constructor
          */
         function WFolowLazyLoad() {
+            var _this = this;
             /**
              * Ajax helper
              * @type {any}
@@ -18,10 +19,7 @@ var LolitaFramework;
             this.tmpl = null;
             this.ajax = window.wp.ajax;
             this.tmpl = window.wp.template('insta-item');
-            // setTimeout(
-            //     () => this.start(),
-            //     1000
-            // );
+            setTimeout(function () { return _this.start(); }, 1000);
         }
         WFolowLazyLoad.prototype.start = function () {
             var _this = this;

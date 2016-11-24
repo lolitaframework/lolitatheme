@@ -77,7 +77,6 @@ class ModelActions
         check_ajax_referer('Lolita Framework', 'nonce');
         $transient_key = 'cache-w-follow';
         $items         = get_transient($transient_key);
-        $items = false;
         $placeholder   = LolitaFramework::baseUrl() . DS . 'app' . DS . 'assets' . DS . 'img' . DS . 'insta_placeholder.min.svg';
 
         if (false === $items) {
