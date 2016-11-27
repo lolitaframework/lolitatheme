@@ -47,7 +47,7 @@
             },
             {
                 "label" : "Social icons",
-                "__CLASS__" : "\\lolitatheme\\LolitaFramework\\Controls\\Repeater\\CustomizeRepeater",
+                "__CLASS__" : "\\lolita\\LolitaFramework\\Controls\\Repeater\\CustomizeRepeater",
                 "__SETTINGS__" : {
                     "transport" : "postMessage"
                 },
