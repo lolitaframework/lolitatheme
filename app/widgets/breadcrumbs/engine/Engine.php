@@ -1,9 +1,9 @@
 <?php
 namespace lolitatheme\app\widgets\breadcrumbs\engine;
 
-use \lolitatheme\LolitaFramework\Core\Route;
-use \lolitatheme\LolitaFramework\Core\Str;
-use \lolitatheme\LolitaFramework\Core\View;
+use \lolita\LolitaFramework\Core\Route;
+use \lolita\LolitaFramework\Core\Str;
+use \lolita\LolitaFramework\Core\View;
 use \lolitatheme\app\widgets\breadcrumbs\engine\Trails\Trail;
 
 class Engine

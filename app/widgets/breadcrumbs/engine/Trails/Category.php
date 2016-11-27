@@ -2,7 +2,7 @@
 namespace lolitatheme\app\widgets\breadcrumbs\engine\Trails;
 
 use \lolitatheme\app\widgets\breadcrumbs\engine\Crumb;
-use \lolitatheme\LolitaFramework\Core\Loc;
+use \lolita\LolitaFramework\Core\Loc;
 
 class Category extends Trail
 {

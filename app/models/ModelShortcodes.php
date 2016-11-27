@@ -2,12 +2,12 @@
 
 namespace lolitatheme;
 
-use \lolitatheme\LolitaFramework;
-use \lolitatheme\LolitaFramework\Core\View;
-use \lolitatheme\LolitaFramework\Core\Arr;
-use \lolitatheme\LolitaFramework\Core\Data;
-use \lolitatheme\LolitaFramework\Core\Decorators\Post;
-use \lolitatheme\LolitaFramework\Core\Decorators\Img;
+use \lolita\LolitaFramework;
+use \lolita\LolitaFramework\Core\View;
+use \lolita\LolitaFramework\Core\Arr;
+use \lolita\LolitaFramework\Core\Data;
+use \lolita\LolitaFramework\Core\Decorators\Post;
+use \lolita\LolitaFramework\Core\Decorators\Img;
 
 class ModelShortcodes
 {
@@ -251,7 +251,7 @@ class ModelShortcodes
         return View::make(
             'blocks' . DS . 'b-services',
             array(
-                'assets' => LolitaFramework::baseUrl() . DS . 'app' . DS . 'assets',
+                'assets' => LolitaFramework::getInstance()->baseUrl() . DS . 'app' . DS . 'assets',
             )
         );
     }
@@ -268,12 +268,13 @@ class ModelShortcodes
             array(
                 'items' => Post::posts(
                     array(
-                        'posts_per_page'   => 3,
-                        'offset'           => 0,
-                        'orderby'          => 'date',
-                        'order'            => 'DESC',
-                        'post_type'        => 'product',
-                        'post_status'      => 'publish',
+                        'posts_per_page' => 3,
+                        'offset'         => 0,
+                        'orderby'        => 'date',
+                        'order'          => 'DESC',
+                        'post_type'      => 'product',
+                        'post_status'    => 'publish',
+                        'envanto_link'   => 'https://codecanyon.net/user/lolitainc/portfolio',
                     )
                 ),
             )

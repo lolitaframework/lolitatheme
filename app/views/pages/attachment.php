@@ -16,7 +16,7 @@
                         <li class="b-attachment__info_item"><b><?php _e('Uploaded on', 'lolita') ?>:</b> <?php echo $p->date() ?></li>
                         <li class="b-attachment__info_item"><b><?php _e('File size', 'lolita') ?>:</b> <?php echo $file_size ?></li>
                         <?php if ($p->img()->isInitialized()) : ?>
-                        <li class="b-attachment__info_item"><b><?php _e('Dimensions', 'lolita') ?>:</b> <?php echo $width ?> × <?php echo $height ?></li>
+                        <li class="b-attachment__info_item"><b><?php _e('Dimensions', 'lolita') ?>:</b> <?php echo $width ?> X <?php echo $height ?></li>
                         <?php endif ?>
                     </ul>
                     <a href="<?php echo $p->guid ?>" class="b-attachment__link"><?php _e('Download', 'lolita') ?></a>

@@ -2,8 +2,8 @@
 
 namespace lolitatheme\app\widgets\menu\engine;
 
-use \lolitatheme\LolitaFramework\Core\Arr;
-use \lolitatheme\LolitaFramework\Core\View;
+use \lolita\LolitaFramework\Core\Arr;
+use \lolita\LolitaFramework\Core\View;
 
 class Engine
 {
@@ -17,7 +17,7 @@ class Engine
             $locations = array_flip($locations);
         }
 
-        return Arr::prepend($locations, __('Select location', 'lf'), -1);
+        return Arr::prepend($locations, __('Select location', 'lolita'), -1);
     }
 
     /**
@@ -29,7 +29,7 @@ class Engine
     {
         $menus = (array) wp_get_nav_menus();
         $menus = Arr::pluck($menus, 'name', 'term_id');
-        return Arr::prepend($menus, __('Select location', 'lf'), -1);
+        return Arr::prepend($menus, __('Select location', 'lolita'), -1);
     }
 
     /**

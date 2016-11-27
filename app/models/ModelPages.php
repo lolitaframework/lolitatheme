@@ -2,11 +2,11 @@
 
 namespace lolitatheme;
 
-use \lolitatheme\LolitaFramework;
-use \lolitatheme\LolitaFramework\Core\Decorators\Post;
-use \lolitatheme\LolitaFramework\Core\Decorators\Term;
-use \lolitatheme\LolitaFramework\Core\View;
-use \lolitatheme\LolitaFramework\Core\Arr;
+use \lolita\LolitaFramework;
+use \lolita\LolitaFramework\Core\Decorators\Post;
+use \lolita\LolitaFramework\Core\Decorators\Term;
+use \lolita\LolitaFramework\Core\View;
+use \lolita\LolitaFramework\Core\Arr;
 use \WP_Post;
 use \WP_Query;
 use \WP_Term;
@@ -77,7 +77,7 @@ class ModelPages
                 'info'          => $info,
                 'width'         => $width,
                 'height'        => $height,
-                'default_image' => LolitaFramework::baseUrl() . '/app/assets/img/b-attachment--file.png'
+                'default_image' => LolitaFramework::getInstance()->baseUrl() . '/app/assets/img/b-attachment--file.png'
             )
         );
     }

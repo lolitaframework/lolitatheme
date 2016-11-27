@@ -2,9 +2,9 @@
 
 namespace lolitatheme\app\widgets\menu\engine;
 
-use \lolitatheme\LolitaFramework\Core\View;
-use \lolitatheme\LolitaFramework\Core\Arr;
-use \lolitatheme\LolitaFramework\Core\Decorators\Post;
+use \lolita\LolitaFramework\Core\View;
+use \lolita\LolitaFramework\Core\Arr;
+use \lolita\LolitaFramework\Core\Decorators\Post;
 
 class Menu
 {

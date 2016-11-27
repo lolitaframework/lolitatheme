@@ -2,9 +2,9 @@
 
 namespace lolitatheme;
 
-use \lolitatheme\LolitaFramework\Core\View;
-use \lolitatheme\LolitaFramework\Core\Arr;
-use \lolitatheme\LolitaFramework;
+use \lolita\LolitaFramework\Core\View;
+use \lolita\LolitaFramework\Core\Arr;
+use \lolita\LolitaFramework;
 
 class ModelOptions
 {
@@ -15,7 +15,7 @@ class ModelOptions
      */
     public static function defaultLogo()
     {
-        return LolitaFramework::baseUrl() . '/app/assets/img/logo.svg';
+        return LolitaFramework::getInstance()->baseUrl() . '/app/assets/img/logo.svg';
     }
 
     /**
@@ -25,7 +25,7 @@ class ModelOptions
      */
     public static function defaultLogoWhite()
     {
-        return LolitaFramework::baseUrl() . '/app/assets/img/logo-white.svg';
+        return LolitaFramework::getInstance()->baseUrl() . '/app/assets/img/logo-white.svg';
     }
 
     /**

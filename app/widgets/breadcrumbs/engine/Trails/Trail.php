@@ -2,7 +2,7 @@
 namespace lolitatheme\app\widgets\breadcrumbs\engine\Trails;
 
 use \lolitatheme\app\widgets\breadcrumbs\engine\Crumb;
-use \lolitatheme\LolitaFramework\Core\Wp;
+use \lolita\LolitaFramework\Core\Wp;
 
 abstract class Trail
 {

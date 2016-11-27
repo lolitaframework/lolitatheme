@@ -2,13 +2,13 @@
 
 namespace lolitatheme;
 
-use \lolitatheme\LolitaFramework\Core\View;
-use \lolitatheme\LolitaFramework\Core\Arr;
-use \lolitatheme\LolitaFramework\Core\Str;
-use \lolitatheme\LolitaFramework\Core\Loc;
-use \lolitatheme\LolitaFramework\Core\Url;
-use \lolitatheme\LolitaFramework\Core\Data;
-use \lolitatheme\LolitaFramework\Core\Decorators\Post;
+use \lolita\LolitaFramework\Core\View;
+use \lolita\LolitaFramework\Core\Arr;
+use \lolita\LolitaFramework\Core\Str;
+use \lolita\LolitaFramework\Core\Loc;
+use \lolita\LolitaFramework\Core\Url;
+use \lolita\LolitaFramework\Core\Data;
+use \lolita\LolitaFramework\Core\Decorators\Post;
 use \WP_Post;
 
 class ModelActions
@@ -99,7 +99,7 @@ class ModelActions
         check_ajax_referer('Lolita Framework', 'nonce');
         $transient_key = 'cache-w-follow';
         $items         = get_transient($transient_key);
-        $placeholder   = LolitaFramework::baseUrl() . DS . 'app' . DS . 'assets' . DS . 'img' . DS . 'insta_placeholder.min.svg';
+        $placeholder   = LolitaFramework::getInstance()->baseUrl() . DS . 'app' . DS . 'assets' . DS . 'img' . DS . 'insta_placeholder.min.svg';
 
         if (false === $items) {
             $url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=3494283511.3a81a9f.ca5fb9bd44df4ad69768c44a8947c3e5&COUNT=20';
@@ -205,6 +205,7 @@ class ModelActions
                         'twemoji' => apply_filters('script_loader_src', includes_url('js/twemoji.min.js'), 'twemoji'),
                     ),
                 ),
+                'js' => View::make(ABSPATH . WPINC . '/js/wp-emoji-loader.min.js'),
             )
         );
     }

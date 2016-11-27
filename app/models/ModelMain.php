@@ -115,8 +115,8 @@ class ModelMain
             'current'            => $current,
             'show_all'           => false,
             'prev_next'          => true,
-            'prev_text'          => __('&laquo; Previous'),
-            'next_text'          => __('Next &raquo;'),
+            'prev_text'          => __('&laquo; Previous', 'lolita'),
+            'next_text'          => __('Next &raquo;', 'lolita'),
             'end_size'           => 1,
             'mid_size'           => 2,
             'type'               => 'plain',
@@ -218,7 +218,7 @@ class ModelMain
                     $dots = true;
                 elseif ($dots && ! $args['show_all']) :
                     $page_links[] = array(
-                        'text' => __('&hellip;'),
+                        'text' => __('&hellip;', 'lolita'),
                     );
                     $dots = false;
                 endif;
