@@ -16,7 +16,9 @@ if (is_singular()) {
 comments_template();
 posts_nav_link();
 paginate_comments_links();
-if (!isset($content_width)) $content_width = 900;
+if (!isset($content_width)) {
+    $content_width = 900;
+}
 the_post_thumbnail();
 add_theme_support('custom-header', array());
 add_theme_support('custom-background', array());
@@ -24,7 +26,8 @@ add_editor_style();
 the_tags();
 add_theme_support('post-thumbnails');
 add_action('widgets_init', 'regSidebars');
-function regSidebars() {
+function regSidebars()
+{
     register_sidebar(array());
 }
 dynamic_sidebar(1);

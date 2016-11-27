@@ -10,4 +10,3 @@ if (class_exists('\lolita\LolitaFramework')) {
     $lolita_framework->addModule('Widgets');
     $lolita_framework->addModule('CssLoader');
 }
-
