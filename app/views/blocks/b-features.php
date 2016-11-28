@@ -1,7 +1,7 @@
 <!-- b-features -->
 <div class="b-features">
     <h2 class="b-features__title"><?php _e('Dreams come true with us!', 'lolita') ?></h2>
-    <p class="b-features__desc"><?php _e('We strive for customer satisfaction so perfect it`ll leave you speechless. That is Lolita inc.', 'lolita') ?></p>
+    <p class="b-features__desc"><?php _e('', 'lolita') ?></p>
     <?php if (count($items)) : ?>
         <ul class="b-features__items">
         <?php foreach ($items as $el) : ?>
