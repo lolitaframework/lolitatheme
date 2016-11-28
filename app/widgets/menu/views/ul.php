@@ -6,7 +6,7 @@
     </ul>
 </nav>
 <?php else : ?>
-    <ul class="w-menu__sub-menu">
+    <ul class="b-sub-menu">
         <?php echo $items ?>
     </ul>
 <?php endif ?>
