@@ -179,7 +179,7 @@ class ModelActions
     {
         $route = Url::route();
         $route = str_replace('/', '', $route);
-        if ('wp-admin' === $route) {
+        if ('wp-admin' === $route && !is_user_logged_in()) {
             wp_redirect(home_url());
             die();
         }
