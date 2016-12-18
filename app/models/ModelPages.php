@@ -96,7 +96,7 @@ class ModelPages
 
         $args = array(
             'numberposts' => $ppp,
-            'offset'      => $ppp * ($paged-1),
+            'offset'      => $ppp * ($paged),
             'orderby'     => 'date',
             'order'       => 'DESC',
             'post_tpye'   => 'post',
@@ -116,7 +116,7 @@ class ModelPages
                 'qo'            => $qo,
                 'query'         => $query,
                 'items'         => $items,
-                'max_num_pages' => $query->max_num_pages,
+                'max_num_pages' => $query->max_num_pages - 1,
                 'current_page'  => $paged,
             )
         );
