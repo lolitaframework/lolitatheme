@@ -9,7 +9,7 @@
     <div class="b-post-preview__content">
         <h3 class="b-post-preview__content__title"><a href="<?php echo $p->link() ?>" class="b-post-preview__content__title__link"><?php echo $p->title() ?></a></h3>
         <div class="b-post-preview__content__excerpt">
-        <?php echo $p->content(); ?>
+        <?php echo apply_filters('the_content', $p->post_excerpt) ?>
         </div>
         <a href="<?php echo $p->link() ?>" class="b-post-preview__content__read-more"><?php _e('Read more', 'lolita') ?></a>
     </div>
