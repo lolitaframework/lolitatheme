@@ -75,7 +75,7 @@ class ModelActions
         $items   = Post::sanitize(get_posts($args));
         $return  = array();
         foreach ($items as &$p) {
-            $content = echo apply_filters('the_content', $p->post_excerpt);
+            $content  = apply_filters('the_content', $p->post_excerpt);
             $return[] = array(
                 'url'     => $p->link(),
                 'title'   => $p->title(),
