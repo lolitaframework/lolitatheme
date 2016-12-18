@@ -9,19 +9,7 @@
     <div class="b-post-preview__content">
         <h3 class="b-post-preview__content__title"><a href="<?php echo $p->link() ?>" class="b-post-preview__content__title__link"><?php echo $p->title() ?></a></h3>
         <div class="b-post-preview__content__excerpt">
-        <?php
-            $content = preg_replace(
-                '/<pre class="prettyprint.*/s',
-                '',
-                $p->post_content
-            );
-            $content = str_replace(
-                '<h2>Example usage</h2>',
-                '',
-                $content
-            );
-            echo $content;
-        ?>
+        <?php echo apply_filters('the_excerpt', $p->post_excerpt); ?>
         </div>
         <a href="<?php echo $p->link() ?>" class="b-post-preview__content__read-more"><?php _e('Read more', 'lolita') ?></a>
     </div>
