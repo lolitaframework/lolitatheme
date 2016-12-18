@@ -75,9 +75,7 @@ class ModelActions
         $items   = Post::sanitize(get_posts($args));
         $return  = array();
         foreach ($items as &$p) {
-            $content = ModelMain::removeCodeFromContent($p->content());
-            $content = Str::limit($content, 255);
-            $content = wp_strip_all_tags($content);
+            $content = echo apply_filters('the_content', $p->post_excerpt);
             $return[] = array(
                 'url'     => $p->link(),
                 'title'   => $p->title(),
